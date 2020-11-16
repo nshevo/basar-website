@@ -1,0 +1,61 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+} */
+
+body > .container {
+  padding-top: 120px;
+}
+
+#ct {
+  position: relative;
+  left: 0px;
+  border: 3px solid blue;
+  float: right;
+  width: 100px;
+  height: 100%;
+}
+
+p {
+  position: relative;
+  float: right;
+}
+
+/* #ct ul {
+  float: left;
+} */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+}
+
+#sidebar {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  background: black;
+  left: -300px;
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  list-style: none;
+  color: white;
+  padding: 20px 24px;
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 330px;
+}
