@@ -15,10 +15,10 @@ var searchRouter = require('./routes/search');
 var app = express();
 
 // connection to mongodb
-const mongo_db_user = process.env.MONGO_DB_USER;
-const mongo_db_password = process.env.MONGO_DB_PASSWORD;
-var mongoURI = `mongodb+srv://${mongo_db_user}:${mongo_db_password} \
-  @cluster.qgkxc.mongodb.net/BasarDB?retryWrites=true&w=majority`;
+const MONGO_DB_USER = process.env.MONGO_DB_USER;
+const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
+const MONGO_DB_HOST = 'cluster.qgkxc.mongodb.net/BasarDB?retryWrites=true&w=majority';
+var mongoURI = `mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@${MONGO_DB_HOST}`;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => console.log('Successfully connected to the Database'))
   .catch((err) => console.log(err));
