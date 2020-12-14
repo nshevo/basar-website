@@ -5,25 +5,16 @@
 
 <body class="d-flex flex-column min-vh-100">
     <%- include('./partials/header.ejs') %>
-    <div id="ct"> 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a href="./vehicles">Vehicles</a></li>
-            <li><a href="./electronics">Electronics</a></li>
-            <li><a href="./clothes">Clothes</a></li>
-            <li><a href="./realty">Realty</a></li>
-            <li><a href="./pets">Pets</a></li>
-            <li><a href="./books">Books</a></li>
-            <li><a href="./tickets">Tickets</a></li>
-            <li><a href="./services">Services</a></li>
-        </ul>
+      
+    <div class="container-fluid bg-white">
+        <div class="row">
+            <%- include('./partials/categories.ejs') %>
+            <div class="col-9" id="main">
+                <h3>Welcome to Basar!</h3>
+            </div>
+        </div>
     </div>
-    <p>Zeilen, also Inhalte wie Texte, Bilder und einige andere 
-        Elemente werden von einem Float nicht verdeckt, sondern in der Breite 
-        verkürzt, so dass sie um das floatende Element herumfließen können.</p>
-    <!-- <main role="main">
-        <h1 class="mt-5">Welcome to Basar</h1>
-        <p class="lead">Here u can purchase all kinds of goods! Enjoy your shopping:)</p>
-      </main> -->
+    
     <%- include('./partials/footer.ejs') %>
     <script src="/javascripts/jquery.slim.min.js"></script>
     <script src="/javascripts/bootstrap.bundle.min.js"></script>

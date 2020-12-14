@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var aboutController = require('../controllers/aboutController');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('about', { title: 'Express' });
-});
+/* GET about page */
+router.get('/', aboutController.about_get);
 
 module.exports = router;

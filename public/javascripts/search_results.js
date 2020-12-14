@@ -1,0 +1,1 @@
+var mainBox = document.getElementById('main');
