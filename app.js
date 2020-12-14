@@ -1,5 +1,7 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
+var mongoose = require('mongoose');
 //var bootstrap = require('bootstrap');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,6 +12,15 @@ var aboutRouter = require('./routes/about');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// connection to mongodb
+const mongo_db_user = process.env.MONGO_DB_USER;
+const mongo_db_password = process.env.MONGO_DB_PASSWORD;
+var mongoURI = `mongodb+srv://${mongo_db_user}:${mongo_db_password} \
+  @cluster.qgkxc.mongodb.net/BasarDB?retryWrites=true&w=majority`;
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result) => console.log('Successfully connected to the Database'))
+  .catch((err) => console.log(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
