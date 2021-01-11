@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
+var addRouter = require('./routes/add');
 
 var app = express();
 
@@ -34,26 +35,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// mongoose and mongo sandbox routes
-// app.get('/add-product', (req, res) => {
-//   var product = new Product({
-//     title: '*NEW* Second product',
-//     price: 100,
-//     description: 'This is my first product on Basar...'
-//   });
-
-//   product.save()
-//     .then((result)  => {
-//       res.send(result)
-//     .catch((err) => {
-//       console.log(err);
-//     });
-//     });
-// });
-
+//mongoose and mongo sandbox routes
 // app.get('/all-products', (req, res) => {
+//   console.log('here');
 //   Product.find()
 //     .then((result) => {
+//       console.log('result'+result);
 //       res.send(result);
 //     })
 //     .catch((err) => {
@@ -65,6 +52,7 @@ app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
+app.use('/add', addRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
