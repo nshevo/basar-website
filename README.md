@@ -7,6 +7,7 @@ then install the needed gems:
 
 ```bash
 npm install
+npm start
 ```
 
 ## Description
@@ -24,8 +25,8 @@ Basar is an E-commerce platform for buying and selling all types of goods. This 
 
 #### Medium
 
-1. Authorization with internal DB - Andriy
-2. Search
+1. Authorization with internal DB - Nikita
+2. Search - Andriy
 3. Filter
 4. Cart - Nikita
 
