@@ -34,6 +34,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use bootstrap assets
+app.use('/assets/vendor/bootstrap/js', express.static(
+  path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'js')));
+app.use('/assets/vendor/bootstrap/css', express.static(
+  path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css')));
+app.use('/assets/vendor/bootstrap/icons', express.static(
+  path.join(__dirname, 'node_modules', 'bootstrap-icons', 'icons')));
+app.use('/assets/vendor/popper.js', express.static(
+  path.join(__dirname, 'node_modules', 'popper.js', 'dist', 'umd')));
 
 //mongoose and mongo sandbox routes
 // app.get('/all-products', (req, res) => {
