@@ -1,8 +1,12 @@
 var Product = require('../models/product');
+const ITEMS_PER_PAGE = 20;
+var itemsAmount = 0;
+var pagesAmount = 0;
 
 // render search page with results from database
-const search_results_get = (req, res, next) =>{
+const searchResultsGet = (req, res, next) =>{
     var item = req.query.item;
+    var page = req.query.page;
 
     //handling of special characters
     item = item.replace(/\.|\*/g, '');
@@ -12,19 +16,38 @@ const search_results_get = (req, res, next) =>{
     }
 
     var regexItem = new RegExp(item, "i");
-    Product.find({ 'title' : { $regex: regexItem}}).sort({createdAt: -1})
+
+    // count pages
+    Product.find({ 'title' : { $regex: regexItem}})
+    .sort({createdAt: -1})
     .then((result) => {
-        //res.send(result);
-        var itemsAmount = result.length;
-        var pagesAmount = Math.ceil(itemsAmount/10);
-        console.log(pagesAmount);
-        res.render('search', { title: 'Search', products: result });
-    })
-    .catch((err) => {
-      console.log(err);
+        itemsAmount = result.length;
+        pagesAmount = Math.ceil(itemsAmount/ITEMS_PER_PAGE);
+        console.log('Items amount: '+ itemsAmount);
+        console.log('Pages amount: '+ pagesAmount);
+
+        //process the result and render the page
+        Product.find({ 'title' : { $regex: regexItem}})
+        .sort({createdAt: -1})
+        .limit(ITEMS_PER_PAGE)
+        .skip(ITEMS_PER_PAGE * (page - 1))
+        .then((result) => {
+            if(page == undefined || page < 1){
+                page = 1;
+            }
+            console.log('Requested page ' + page);
+            res.render('search', { title: 'Search', products: result, pageNr: page, pageMax: pagesAmount});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     });
+
+    
 }
 
 module.exports = {
-    search_results_get
+    searchResultsGet,
+    itemsAmount,
+    pagesAmount
 }
