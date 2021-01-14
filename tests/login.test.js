@@ -5,7 +5,7 @@
 
 const { expect } = require("chai");
 var request = require("supertest");
-var app = require("../server");
+var app = require("../app");
 
 //Credentials for testing the dashboard
 const userCredentials = {
@@ -13,7 +13,7 @@ const userCredentials = {
     password: "123123"
 }
 
-const userCredentialsInvalid = {
+const invalidUserCredentials = {
     email: "root@gmail.comm", 
     password: "123123"
 }
@@ -34,3 +34,21 @@ before(function(done){
         });
 });
 
+describe("POST /user/login", function(done){
+    it("should return 302 response and redirect to /user/dashboard", function(done){
+        request(app)
+            .post("/user/login")
+            .send(userCredentials)
+            .expect(302)
+            .expect("Location", "/user/dashboard", done);
+    });
+
+    //sending invalid user data to login
+    it("should return 422 response", function(done){
+        request(app)
+            .post("/user/login")
+            .send(invalidUserCredentials)
+            .expect(422, done);
+    });
+
+});
