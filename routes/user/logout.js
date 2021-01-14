@@ -4,7 +4,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var controller = require("../../controller/logoutController");
+var controller = require("../../controllers/logoutController");
 
 router.get('/user/logout', controller.logOut);
 

@@ -4,7 +4,7 @@
  */
 const express = require("express");
 const router = express.Router();
-const controller = require("../../controller/registrationController");
+const controller = require("../../controllers/registrationController");
 
 router.get('/user/registration', controller.isRegistred);
 router.post("/user/registration", controller.signUp);
