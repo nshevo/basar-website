@@ -28,7 +28,7 @@ const MONGO_DB_USER = process.env.MONGO_DB_USER;
 const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
 const MONGO_DB_HOST = 'cluster.qgkxc.mongodb.net/BasarDB?retryWrites=true&w=majority';
 var mongoURI = `mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@${MONGO_DB_HOST}`;
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then((result) => console.log('Successfully connected to the Database'))
   .catch((err) => console.log(err));
 
@@ -78,11 +78,9 @@ app.use('/users', usersRouter);
 app.use('/search', searchRouter);
 app.use('/add', addRouter);
 
-app.get("/user/registration", registrationRouter);
-app.post("/user/registration", registrationRouter);
-app.get("/user/login", loginRouter);
-app.post("/user/login", loginRouter);
-app.get("/user/logout", logoutRouter);
+app.use("/user/registration", registrationRouter);
+app.use('/user/login', loginRouter);
+app.use("/user/logout", logoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
