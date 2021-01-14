@@ -80,7 +80,5 @@ describe("POST /user/registration" , function(done){
             .expect("Location", "/user/login", done);
     });
     */
-
-
     
 });
