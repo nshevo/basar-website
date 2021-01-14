@@ -53,3 +53,16 @@ exports.signIn = async (req, res) => {
     });
 }
 
+//Login Page - verify login 
+exports.isLoggedIn = (req, res) => {
+    passport.authenticate('jwt', { session: false, failureFlash: false}, 
+    (err,user) => {
+        if (!user) { 
+            res.render('user/login', { messages: {error: req.flash('error'), success: req.flash('success')} }); 
+        }
+        if(user){
+            res.redirect('/user/dashboard');
+        } 
+    })(req,res)
+}
+
