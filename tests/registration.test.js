@@ -47,6 +47,20 @@ describe("GET /user/registration", function(done){
         req.cookies = jwtCookies;
         req.expect(302)
             .expect("Location", "/user/dashboard", done);
-    });    
-    
+    });        
+});
+
+describe("POST /user/registration" , function(done){
+    it("should return 422 response for wrong/incomplete form entries", function(done){
+        request(app)
+            .post("/user/registration")
+            .send({lastName:"lastName"})
+            .expect(422,done);
+    });
+
+    it("should return 422 response for empty form", function(done){
+        request(app)
+            .post("/user/registration")
+            .expect(422,done);
+    });
 });
