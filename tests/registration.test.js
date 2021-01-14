@@ -69,8 +69,9 @@ describe("POST /user/registration" , function(done){
             .post("/user/registration")
             .expect(422,done);
     });
-
     
+    //Uncomment this section to test successful registration
+    /*
     it("should return 302 response (redirect to /user/login) for successful user registration", function(done){
         request(app)
             .post("/user/registration")
@@ -78,5 +79,8 @@ describe("POST /user/registration" , function(done){
             .expect(302)
             .expect("Location", "/user/login", done);
     });
+    */
+
+
     
 });
