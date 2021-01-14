@@ -78,3 +78,16 @@ exports.signUp = async (req, res) => {
         res.status(500).send("Error in Saving");
     }
 }
+
+//Registration page - verify login
+exports.isRegistred = (req, res) => {
+    passport.authenticate('jwt', { session: false }, 
+    function (err,user,info){
+        if (!user) { 
+            res.render('user/registration');
+        }
+        if(user){
+            res.redirect('/user/dashboard');
+        } 
+    })(req,res) 
+}
