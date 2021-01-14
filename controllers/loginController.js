@@ -17,14 +17,14 @@ exports.signIn = async (req, res) => {
     .then(async user => {
         if (!user) {
             req.flash("error", "Email is incorrect");
-            return res.status(422).render('user/login', { messages: {error: req.flash('error'), success: req.flash('success')} });
+            return res.status(422).render('user/login', { title: "Login", messages: {error: req.flash('error'), success: req.flash('success')} });
         }
     
         var passwordIsValid = await argon2.verify(user.password, password); 
     
         if (!passwordIsValid) {
             req.flash("error", "Password is incorrect");
-            return res.status(422).render('user/login', { messages: {error: req.flash('error'), success: req.flash('success')} });
+            return res.status(422).render('user/login', { title: "Login", messages: {error: req.flash('error'), success: req.flash('success')} });
         }
     
         //JWT token content
@@ -58,7 +58,7 @@ exports.isLoggedIn = (req, res) => {
     passport.authenticate('jwt', { session: false, failureFlash: false}, 
     (err,user) => {
         if (!user) { 
-            res.render('user/login', { messages: {error: req.flash('error'), success: req.flash('success')} }); 
+            res.render('user/login', { title: "Login", messages: {error: req.flash('error'), success: req.flash('success')} }); 
         }
         if(user){
             res.redirect('/user/dashboard');
