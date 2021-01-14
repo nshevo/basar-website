@@ -50,6 +50,12 @@ describe("GET /user/registration", function(done){
     });        
 });
 
+const testUser = {
+    firstName: "Test", lastName: "Testen",
+    country: "Germany", city: "Berlin", streetHouseNumber: "Wilhelminenhof 74b", 
+    email: "TestTesten_3@.test.com", password: "123123", password2: "123123"
+}
+
 describe("POST /user/registration" , function(done){
     it("should return 422 response for wrong/incomplete form entries", function(done){
         request(app)
@@ -63,4 +69,14 @@ describe("POST /user/registration" , function(done){
             .post("/user/registration")
             .expect(422,done);
     });
+
+    
+    it("should return 302 response (redirect to /user/login) for successful user registration", function(done){
+        request(app)
+            .post("/user/registration")
+            .send(testUser) //Please Change email in testUser
+            .expect(302)
+            .expect("Location", "/user/login", done);
+    });
+    
 });
