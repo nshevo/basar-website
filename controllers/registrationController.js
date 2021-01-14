@@ -16,7 +16,7 @@ exports.signUp = async (req, res) => {
     
     if(isAnyFieldEmpty){
         errors.push({message: "Please enter all fields"});
-        return res.status(422).render('user/registration', {errors});
+        return res.status(422).render('user/registration', {title: "Registration", errors});
     }
   
     if(password.length < 6){
@@ -50,7 +50,7 @@ exports.signUp = async (req, res) => {
         }
     
         if(errors.length > 0){
-            return res.status(422).render('user/registration', {errors});
+            return res.status(422).render('user/registration', {title: "Registration", errors});
         }
     
         //Create new User with all the input information
@@ -84,7 +84,7 @@ exports.isRegistred = (req, res) => {
     passport.authenticate('jwt', { session: false }, 
     function (err,user,info){
         if (!user) { 
-            res.render('user/registration');
+            res.render('user/registration', {title: "Registration"});
         }
         if(user){
             res.redirect('/user/dashboard');
