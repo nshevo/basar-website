@@ -6,12 +6,20 @@ var mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('connect-flash');
+var session = require('express-session');
+var bodyParser = require("body-parser");
+var passport = require("./routes/user/passport");
 
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 var addRouter = require('./routes/add');
+
+var registrationRouter = require("./routes/user/registration");
+var loginRouter = require("./routes/user/login");
+var logoutRouter = require("./routes/user/logout");
 
 var app = express();
 
@@ -33,6 +41,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// session for flash
+app.use(cookieParser(process.env.COOKIE_PARSER_SECRET_STRING));
+app.use(session({secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false}));
+app.use(flash());
+
+app.use(passport.initialize());
 
 // use bootstrap assets
 app.use('/assets/vendor/bootstrap/js', express.static(
@@ -62,6 +77,12 @@ app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
 app.use('/add', addRouter);
+
+app.get("/user/registration", registrationRouter);
+app.post("/user/registration", registrationRouter);
+app.get("/user/login", loginRouter);
+app.post("/user/login", loginRouter);
+app.get("/user/logout", logoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
