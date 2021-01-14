@@ -32,7 +32,7 @@ exports.signIn = async (req, res) => {
             email: user.email,
             firstName: user.firstName,
             lastName: user.lastName,
-            expires: Date.now() + parseInt(config.JWT_EXPIRATION_MS),
+            expires: Date.now() + parseInt(process.env.JWT_TOKEN_EXPIRATION_MS),
         };
     
         // assign payload to req.user
@@ -43,10 +43,10 @@ exports.signIn = async (req, res) => {
             }
     
             // generate a signed json web token and return in response
-            const token = jwt.sign(JSON.stringify(payload), config.SECRET);
+            const token = jwt.sign(JSON.stringify(payload), process.env.JWT_SECRET_STRING);
     
             // save jwt token in the cookie
-            res.cookie('jwt', token, { httpOnly: true, secure: true, maxAge: config.JWT_EXPIRATION_MS });
+            res.cookie('jwt', token, { httpOnly: true, secure: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
     
             res.status(200).redirect("/user/dashboard");
         });
