@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <%- include('../partials/header.ejs') %>
+
+            <div class="container-fluid bg-white">
+                <div class="row">
+                    <%- include('../partials/categories.ejs') %>
+                        <div class="col-9" id="main">
+                            <h3 class="title">
+                                <%- title %>
+                            </h3>
+
+                            <h1>Hello <%= userFirstName %>
+                                    <%= userLastName %>
+                            </h1>
+                            <a href="/user/logout">Logout</a>
+
+                        </div>
+                </div>
+            </div>
+
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>
