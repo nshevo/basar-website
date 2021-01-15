@@ -9,12 +9,12 @@ var app = require("../app");
 
 //Credentials for testing the dashboard
 const userCredentials = {
-    email: "root@gmail.com", 
+    email: "root@gmail.com",
     password: "123123"
 }
 
 const invalidUserCredentials = {
-    email: "root@gmail.comm", 
+    email: "root@gmail.comm",
     password: "123123"
 }
 
@@ -22,11 +22,11 @@ const invalidUserCredentials = {
 var jwtCookies;
 
 //Receive the jwt cookie
-before(function(done){
+before(function (done) {
     request(app)
         .post("/user/login")
         .send(userCredentials)
-        .end(function(err, response){
+        .end(function (err, response) {
             expect(response.statusCode).to.equal(302);
             expect("Location", "/user/dashboard");
             jwtCookies = response.headers["set-cookie"].pop().split(";")[0];
@@ -34,8 +34,8 @@ before(function(done){
         });
 });
 
-describe("POST /user/login", function(done){
-    it("should return 302 response and redirect to /user/dashboard", function(done){
+describe("POST /user/login", function (done) {
+    it("should return 302 response and redirect to /user/dashboard", function (done) {
         request(app)
             .post("/user/login")
             .send(userCredentials)
@@ -44,7 +44,7 @@ describe("POST /user/login", function(done){
     });
 
     //sending invalid user data to login
-    it("should return 422 response", function(done){
+    it("should return 422 response", function (done) {
         request(app)
             .post("/user/login")
             .send(invalidUserCredentials)

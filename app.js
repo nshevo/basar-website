@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // session for flash
 app.use(cookieParser(process.env.COOKIE_PARSER_SECRET_STRING));
-app.use(session({secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false}));
+app.use(session({ secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 app.use(flash());
 
 app.use(passport.initialize());
@@ -83,13 +83,13 @@ app.use('/user/login', loginRouter);
 app.use("/user/logout", logoutRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.status(404);
-  res.render('404', { title: 'Page Not Found'});
+  res.render('404', { title: 'Page Not Found' });
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
 
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -97,7 +97,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Server error'});
+  res.render('error', { title: 'Server error' });
 });
 
 module.exports = app;

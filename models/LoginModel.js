@@ -31,7 +31,7 @@ const LoginSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    streetHouseNumber:{
+    streetHouseNumber: {
         type: String,
         required: true
     },
@@ -40,6 +40,6 @@ const LoginSchema = mongoose.Schema({
         default: Date.now()
     }
 });
-  
+
 // export model user with LoginSchema
 module.exports = mongoose.model('Logindata', LoginSchema);

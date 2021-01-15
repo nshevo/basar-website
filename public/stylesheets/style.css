@@ -75,7 +75,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .title {
-margin-top: 1.0rem;  
+margin-top: 1.0rem;
 }
 
 input[type="submit"] {
@@ -95,7 +95,7 @@ input[type="submit"] {
   border-radius: 4px;
   border: 1px solid #bbb;
   cursor: pointer;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   margin-bottom: 1.0rem;
 }
 ul, form {
