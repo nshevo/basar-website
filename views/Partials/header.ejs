@@ -1,17 +1,22 @@
 <nav class="navbar navbar-dark text-white bg-dark">
-    <a class="navbar-brand" href="/" id="bla"><img class="float-left d-inline-block align-top" src="/images/logo.png" alt="" id="logo"></a>
+    <a class="navbar-brand" href="/" id="bla">
+        <img class="float-left d-inline-block align-top" src="/images/logo.png" alt="" id="logo">
+    </a>
     <form class="mx-2 my-auto d-inline w-50" action="/search" method="GET">
         <div class="input-group md-form form-sm form-1 pl-0">
-            <input class="form-control mr-sm-0 border border-right-0" type="text" placeholder="Search" aria-label="Search" id="searchField" name="item" required>
+            <input class="form-control mr-sm-0 border border-right-0" type="text" placeholder="Search"
+                aria-label="Search" id="searchField" name="item" required>
             <!-- <input type="text" class="form-control border border-right-0" placeholder="Search..." aria-label="Search"> -->
             <!-- <span class="input-group-append"> -->
-                <!-- <button class="btn btn-dark btn-outline-secondary text-white my-2 my-sm-0" id="navBarSearchBtn" data-toggle="button" type="submit">Search</button> -->
-                <button class="btn btn-dark btn-outline-secondary text-white aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+            <!-- <button class="btn btn-dark btn-outline-secondary text-white my-2 my-sm-0" id="navBarSearchBtn" data-toggle="button" type="submit">Search</button> -->
+            <button class="btn btn-dark btn-outline-secondary text-white aqua-gradient btn-rounded btn-sm my-0"
+                type="submit">Search</button>
             <!-- </span> -->
         </div>
     </form>
     <div>
-        <a class="text-white" href="">Login</a> | <a class="text-white" href="">Register</a>
+        <a class="text-white" href="/user/login">Login</a> | <a class="text-white"
+            href="/user/registration">Register</a>
     </div>
     <a href=""><img src="/images/cart.png" width="50" height="50" alt=""></a>
 </nav>

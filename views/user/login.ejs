@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <%- include('../partials/header.ejs') %>
+
+            <div class="container-fluid bg-white">
+                <div class="row">
+                    <%- include('../partials/categories.ejs') %>
+                        <div class="col-9" id="main">
+                            <h3 class="title">
+                                <%- title %>
+                            </h3>
+
+                            <ul>
+                                <% if(typeof message !='undefined' ) { %>
+                                    <li>
+                                        <%= message %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+
+                            <ul>
+                                <% if(messages.success.length) { %>
+                                    <li>
+                                        <%= messages.success %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+
+                            <ul>
+                                <% if(messages.error.length){ %>
+                                    <li>
+                                        <%= messages.error %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+
+                            <form action="/user/login" method="POST">
+                                <div>
+                                    <input type="email" id="email" name="email" placeholder="E-Mail" required>
+                                </div>
+                                <div>
+                                    <input type="password" id="password" name="password" placeholder="Password"
+                                        required>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Login">
+                                </div>
+                                <a href="/user/registration">Register</a>
+                            </form>
+                        </div>
+                </div>
+            </div>
+
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>
