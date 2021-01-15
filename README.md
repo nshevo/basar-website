@@ -10,6 +10,12 @@ npm install
 npm start
 ```
 
+To start tests:
+
+```bash
+npm test
+```
+
 ## Description
 
 Basar is an E-commerce platform for buying and selling all types of goods. This webapplication was written in JavaScript using the Express Framework.
@@ -25,10 +31,10 @@ Basar is an E-commerce platform for buying and selling all types of goods. This 
 
 #### Medium
 
-1. Authorization with internal DB - Nikita
+1. Registration and Login with DB - Nikita
 2. Search - Andriy
 3. Filter
-4. Cart - Nikita
+4. Cart
 
 #### Hard
 
