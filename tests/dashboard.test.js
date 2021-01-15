@@ -2,7 +2,6 @@
  * @author Nikita Shevchenko
  * @description Testing the Feature Profile/Dashboard for Bazar
  */
-
 const { expect } = require("chai");
 var request = require("supertest");
 var app = require("../app");
@@ -33,7 +32,6 @@ before(function (done) {
             done();
         });
 });
-
 
 describe("GET /user/dashboard", function (done) {
     //Fill cookies with jwt token from before()
