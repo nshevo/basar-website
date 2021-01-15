@@ -33,3 +33,20 @@ before(function (done) {
             done();
         });
 });
+
+
+describe("GET /user/dashboard", function (done) {
+    //Fill cookies with jwt token from before()
+    it("should return 200 response if the user is logged in", function (done) {
+        var req = request(app).get("/user/dashboard");
+        req.cookies = jwtCookies;
+        req.expect(200, done);
+    });
+
+    it("should return 302 response and redirect to /user/login", function (done) {
+        request(app)
+            .get("/user/dashboard")
+            .expect(302)
+            .expect("Location", "/user/login", done);
+    });
+});
