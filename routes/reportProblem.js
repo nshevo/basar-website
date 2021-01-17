@@ -4,8 +4,9 @@
  */
 var express = require('express');
 var router = express.Router();
-const controller = require("../../controllers/reportProblemController");
+const controller = require("../controllers/reportProblemController");
 
-router.get('/', controller.reportProblem);
+router.get('/', controller.isUserLoggedIn);
+router.post('/', controller.reportProblem);
 
 module.exports = router;
