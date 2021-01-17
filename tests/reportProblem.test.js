@@ -1,6 +1,6 @@
 /**
  * @author Nikita Shevchenko
- * @description Testing the Registration for Basar
+ * @description Testing the Reporting a problem for Basar
  */
 
 const { expect } = require("chai");
