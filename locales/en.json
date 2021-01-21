@@ -1,0 +1,110 @@
+{
+	"404": {
+		"title": "Page Not Found",
+		"heading": "Error",
+		"message": "Page was not found"
+	},
+	"index": {
+		"title": "Shopping as it should be",
+		"welcome": "Welcome to"
+	},
+	"header": {
+		"register": "Register",
+		"search": "Search"
+	},
+	"footer": {
+		"about": "About",
+		"help": "Help",
+		"contact": "Contacts",
+		"reportProblem": "Report Problems",
+		"copyRight": {
+			"message": "CopyRight © 2020 Intellectual property of Mr. Robot"
+		}
+	},
+	"about": {
+		"title": "Express",
+		"heading": "About us",
+		"subHeading": "This E-commerce platform was created by 3 students only for educational purpose"
+	},
+	"dashBoard": {
+		"title": "DashBoard"
+	},
+	"registration": {
+		"title": "Registration",
+		"placeHolders": {
+			"firstName": "First Name",
+			"lastName": "Last Name",
+			"country": "Country",
+			"city": "City",
+			"streetHouseNumber": "Street and House Number",
+			"password": "Password",
+			"confirmPassword": "Confirm Password"
+		},
+		"button": {
+			"text": "Register"
+		},
+		"alreadyRegister": "Already Registerd"
+	},
+	"reportProblem": {
+		"title": "Report Problems",
+		"subject": "Subject",
+		"description": "Description",
+		"reportBtn": "Report"
+	},
+	"search": {
+		"title": "Search",
+		"notFound": "Sorry... No products were found"
+	},
+	"category": {
+		"heading": "Categories",
+		"name": {
+			"books": "Books",
+			"clothes": "Clothes",
+			"electronics": "Electronics",
+			"furniture": "Furniture",
+			"gaming": "Gaming",
+			"jobs": "Jobs",
+			"pets": "Pets",
+			"realty": "Realty",
+			"services": "Services",
+			"sports": "Sports",
+			"tickets": "Tickets",
+			"vehicles": "Vehicles"
+		},
+		"nav": {
+			"categoryLink": "Categories",
+			"categoryNames": {
+				"clothes": "Clothes",
+				"electronics": "Electronics",
+				"jobs": "Jobs",
+				"pets": "Pets",
+				"realty": "Realty",
+				"services": "Services",
+				"sports": "Sports",
+				"vehicles": "Vehicles"
+			}
+		},
+		"error": {
+			"title": "Server error",
+			"heading": "Server error",
+			"message": "We are sorry, but the service is currently unavailable"
+		},
+		"login": {
+			"placeHolders": {
+				"password": "Password"
+			},
+			"linkRegister": "Register"
+		}
+	},
+	"login": {
+		"placeHolders": {
+			"password": "login.placeHolders.password"
+		},
+		"linkRegister": "login.linkRegister"
+	},
+	"error": {
+		"title": "error.title",
+		"heading": "error.heading",
+		"message": "error.message"
+	}
+}

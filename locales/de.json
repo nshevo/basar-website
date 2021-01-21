@@ -1,0 +1,99 @@
+{
+	"404": {
+		"title": "Seite nicht gefunden",
+		"heading": "Falsch",
+		"message": "Seite nicht gefunden"
+	},
+	"index": {
+		"title": "Einkaufen wie es sein sollte",
+		"welcome": "Willkommen zu"
+	},
+	"header": {
+		"register": "Registrieren",
+		"search": "Suche"
+	},
+	"footer": {
+		"about": "Über uns",
+		"help": "Hilfe",
+		"contact": "Kontakte",
+		"reportProblem": "Probleme melden",
+		"copyRight": {
+			"message": "CopyRight © 2020 Geistiges Eigentum von Mr. Robot"
+		}
+	},
+	"about": {
+		"title": "Ausdrücken",
+		"heading": "Über uns",
+		"subHeading": "Diese E-Commerce-Plattform wurde von 3 Studenten nur zu Bildungszwecken erstellt"
+	},
+	"dashBoard": {
+		"title": "Instrumententafel"
+	},
+	"registration": {
+		"title": "Anmeldung",
+		"placeHolders": {
+			"firstName": "Vorname",
+			"lastName": "Nachname",
+			"country": "Land",
+			"city": "Stadt",
+			"streetHouseNumber": "Straße und Hausnummer",
+			"password": "Passwort",
+			"confirmPassword": "Kennwort bestätigen"
+		},
+		"button": {
+			"text": "Registrieren"
+		},
+		"alreadyRegister": "Bereits registriert"
+	},
+	"reportProblem": {
+		"title": "Probleme melden",
+		"subject": "Thema",
+		"description": "Beschreibung",
+		"reportBtn": "Bericht"
+	},
+	"search": {
+		"title": "Suche",
+		"notFound": "Entschuldigung ... Es wurden keine Produkte gefunden"
+	},
+	"category": {
+		"heading": "Kategorien",
+		"name": {
+			"books": "Bücher",
+			"clothes": "Kleider",
+			"electronics": "Elektronik",
+			"furniture": "Möbel",
+			"gaming": "Spielen",
+			"jobs": "Arbeitsplätze",
+			"pets": "Haustiere",
+			"realty": "Grundeigentum",
+			"services": "Dienstleistungen",
+			"sports": "Sport",
+			"tickets": "Tickets",
+			"vehicles": "Fahrzeuge"
+		}
+	},
+	"nav": {
+		"categoryLink": "Kategorien",
+		"categoryNames": {
+			"clothes": "Kleider",
+			"electronics": "Elektronik",
+			"jobs": "Arbeitsplätze",
+			"pets": "Haustiere",
+			"realty": "Grundeigentum",
+			"services": "Dienstleistungen",
+			"sports": "Sport",
+			"vehicles": "Fahrzeuge"
+		}
+	},
+	"error": {
+		"title": "Serverfehler",
+		"heading": "Serverfehler",
+		"message": "Es tut uns leid, aber der Dienst ist derzeit nicht verfügbar"
+	},
+	"login": {
+		"placeHolders": {
+			"password": "Passwort"
+		},
+		"linkRegister": "Registrieren"
+	}
+}

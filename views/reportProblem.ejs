@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="<%=response.getLocale()%>">
+
+<%- include('./partials/head.ejs') %>
+
+    <body class="d-flex flex-column min-vh-100">
+        <%- include('./partials/header.ejs') %>
+
+            <div class="container-fluid bg-white">
+                <div class="row">
+                    <%- include('./partials/categories.ejs') %>
+                        <div class="col-9" id="main">
+                            <h3 class="title">
+                                <%- title %>
+                            </h3>
+
+                            <ul>
+                                <% if(messages.success.length) { %>
+                                    <li>
+                                        <%= messages.success %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+
+                            <ul>
+                                <% if(messages.error.length){ %>
+                                    <li>
+                                        <%= messages.error %>
+                                    </li>
+                                    <% } %>
+                            </ul>
+
+                            <% if(typeof userEmail==='undefined' ) { %>
+                                <% userEmail="" ; %>
+                            <% } %>
+
+                            <form action="/reportProblem" method="POST">
+
+                                <div>
+                                    <input type="email" id="email" name="email" placeholder="E-Mail"
+                                        value="<%= userEmail; %>" required>
+                                </div>
+
+                                <div>
+                                    <input type="text" id="subject" name="subject" placeholder="<%=response.__('reportProblem.subject')%>" required>
+                                </div>
+
+                                <div>
+                                    <textarea class="reportDescription" name="description" id="description" cols="30"
+                                        rows="10" placeholder="<%=response.__('reportProblem.description')%>" required></textarea>
+                                </div>
+
+                                <div>
+                                    <input type="submit" value="<%=response.__('reportProblem.reportBtn')%>">
+                                </div>
+                            </form>
+
+
+                        </div>
+                </div>
+            </div>
+
+            <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

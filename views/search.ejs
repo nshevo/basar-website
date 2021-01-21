@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="<%=response.getLocale()%>">
+
+<%- include('./partials/head.ejs') %>
+
+<body class="d-flex flex-column min-vh-100 bg-light">
+    <%- include('./partials/header.ejs') %>
+    <div class="container-fluid bg-light">
+        <div class="row">
+            <%- include('./partials/categories.ejs') %>
+
+            <div class="col-9 px-0 w-100 postition-static" id="main">
+                <% if (products.length > 0) { %>
+                    <% products.forEach(product => { %>
+                        <div class="row no-gutters bg-light position-relative">
+                            <div class="col-2 align-self-center position-static">Picture</div>
+                            <div class="col-6 align-self-start position-static">
+                                <a class="stretched-link text-dark mark" href="/product/<%= product._id %>">
+                                    <%- product.title %>
+                                </a>
+                                <div class="row no-gutters bg-light position-relative">
+                                    <div class="col-6 offset-2 small"><%- product.description %></div>
+                                </div>
+                            </div>
+                            <div class="col-1 align-self-start text-right position-static"><%- product.price %>$</div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <h1><%=response.__("search.notFound")%>.</h1>
+                <% } %>
+            </div>
+        </div>
+        <div class="container w-100 mb-4 pb-4">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <% if (pageNr == 1) { %>
+                        <li class="page-item disabled">
+                            <a class="page-link text-grey" href="#" tabindex="-1" id="previous">Previous</a>
+                          </li>
+                        <% } else { %>
+                            <li class="page-item">
+                                <a class="page-link text-dark" href="#" tabindex="-1" id="previous">Previous</a>
+                              </li>
+                        <% } %>
+                  <li class="page-item disabled"><a class="page-link text-dark"><%- pageNr %></a></li>
+                    <% if (pageNr == pageMax) { %>
+                        <li class="page-item disabled">
+                            <a class="page-link text-grey" href="#" id="next">Next</a>
+                          </li>
+                    <% } else { %>
+                        <li class="page-item">
+                            <a class="page-link text-dark" href="#" id="next">Next</a>
+                          </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <script type="text/javascript" src="/javascripts/search_results.js"></script>
+</body>
+</html>

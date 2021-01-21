@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="<%=response.getLocale()%>">
+
+<%- include('./partials/head.ejs') %>
+
+<body class="d-flex flex-column min-vh-100">
+    <%- include('./partials/header.ejs') %>
+    <main role="main" class="container">
+        <h1><%= response.__("about.heading")%>:</h1>
+        <h2><%= response.__("about.subHeading")%>.</h2>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
