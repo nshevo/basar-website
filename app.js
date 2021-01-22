@@ -10,18 +10,29 @@ var flash = require('connect-flash');
 var session = require('express-session');
 var bodyParser = require("body-parser");
 var passport = require("./routes/user/passport");
-
+var fs = require('fs');
+var http = require('http');
+var url = require('url');
+var glob = require( 'glob' );
+var language_dict = {};
 var indexRouter = require('./routes/index');
+var shopRouter = require('./routes/allproducts'); 
 var aboutRouter = require('./routes/about');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 var addRouter = require('./routes/add');
+const language = require('./routes/language')
+const i18n = require('./i18n.config')
+//var expressLayouts = require('express-ejs-layouts');
 
 var registrationRouter = require("./routes/user/registration");
 var loginRouter = require("./routes/user/login");
 var logoutRouter = require("./routes/user/logout");
 var dashboardRouter = require("./routes/user/dashboard");
 var reportProblemRouter = require("./routes/reportProblem");
+
+
+
 
 var app = express();
 
@@ -37,6 +48,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, us
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+//app.use(expressLayouts);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -49,7 +61,11 @@ app.use(cookieParser(process.env.COOKIE_PARSER_SECRET_STRING));
 app.use(session({ secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 app.use(flash());
 
+
+
 app.use(passport.initialize());
+
+app.use(i18n.init);
 
 // use bootstrap assets
 app.use('/assets/vendor/bootstrap/js', express.static(
@@ -61,6 +77,15 @@ app.use('/assets/vendor/bootstrap/icons', express.static(
 app.use('/assets/vendor/popper.js', express.static(
   path.join(__dirname, 'node_modules', 'popper.js', 'dist', 'umd')));
 
+
+//setting locale for selected language from cookie
+app.use((req,res,next)=>{
+  var cookie=req.cookies.language;
+  if(typeof cookie!== 'undefined'){
+    res.setLocale(cookie)
+  }
+  next();
+})
 //mongoose and mongo sandbox routes
 // app.get('/all-products', (req, res) => {
 //   console.log('here');
@@ -75,6 +100,7 @@ app.use('/assets/vendor/popper.js', express.static(
 // });
 
 app.use('/', indexRouter);
+app.use('/allproducts', shopRouter);
 app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
@@ -85,11 +111,15 @@ app.use('/user/login', loginRouter);
 app.use("/user/logout", logoutRouter);
 app.use("/user/dashboard", dashboardRouter);
 app.use("/reportProblem", reportProblemRouter);
+app.use("/language", language)
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404);
-  res.render('404', { title: 'Page Not Found' });
+  res.render('404', { title: res.__("404.title"),response:res });
 });
 
 // error handler
@@ -101,7 +131,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', { title: 'Server error' });
+  res.render('error', { title: res.__("error.title"),response:res });
 });
 
 module.exports = app;

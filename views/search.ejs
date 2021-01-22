@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('./partials/head.ejs') %>
 
@@ -26,7 +26,7 @@
                         </div>
                     <% }) %>
                 <% } else { %>
-                    <h1>Sorry... No products were found.</h1>
+                    <h1><%=response.__("search.notFound")%>.</h1>
                 <% } %>
             </div>
         </div>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('./partials/head.ejs') %>
 
 <body class="d-flex flex-column min-vh-100">
     <%- include('./partials/header.ejs') %>
     <main role="main" class="container">
-        <h1>About us:</h1>
-        <h2>This E-commerce platform was created by 3 students only for educational purpose.</h2>
+        <h1><%= response.__("about.heading")%>:</h1>
+        <h2><%= response.__("about.subHeading")%>.</h2>
     </main>
     <%- include('./partials/footer.ejs') %>
 </body>

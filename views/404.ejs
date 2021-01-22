@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('./partials/head.ejs') %>
 
 <body class="d-flex flex-column min-vh-100">
     <%- include('./partials/header.ejs') %>
     <main role="main" class="container">
-        <h1>Ooops... 404 Error!</h1>
-        <h2>Page was not found :( </h2>
+        <h1>Ooops... 404 <%=response.__("404.heading")%>!</h1>
+        <h2><%=response.__("404.message")%> :( </h2>
         <img class="float-left d-inline-block align-top" src="/images/dora.png" alt="">
     </main>
     <%- include('./partials/footer.ejs') %>
