@@ -69,7 +69,8 @@
 			"services": "Services",
 			"sports": "Sports",
 			"tickets": "Tickets",
-			"vehicles": "Vehicles"
+			"vehicles": "Vehicles",
+			"allProducts": "All products"
 		},
 		"nav": {
 			"categoryLink": "Categories",
@@ -103,8 +104,14 @@
 		"linkRegister": "login.linkRegister"
 	},
 	"error": {
-		"title": "error.title",
-		"heading": "error.heading",
-		"message": "error.message"
+		"title": "Server error",
+		"heading": "Server error",
+		"message": "Oops, service is currently not available"
+	},
+	"allProducts": {
+		"title": "allProducts.title"
+	},
+	"shoppingCart": {
+		"title": "shoppingCart.title"
 	}
 }

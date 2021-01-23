@@ -27,7 +27,7 @@
 		"subHeading": "Diese E-Commerce-Plattform wurde von 3 Studenten nur zu Bildungszwecken erstellt"
 	},
 	"dashBoard": {
-		"title": "Instrumententafel"
+		"title": "DashBoard"
 	},
 	"registration": {
 		"title": "Anmeldung",
@@ -69,7 +69,8 @@
 			"services": "Dienstleistungen",
 			"sports": "Sport",
 			"tickets": "Tickets",
-			"vehicles": "Fahrzeuge"
+			"vehicles": "Fahrzeuge",
+			"allProducts": "Alle Produkte"
 		}
 	},
 	"nav": {
@@ -95,5 +96,11 @@
 			"password": "Passwort"
 		},
 		"linkRegister": "Registrieren"
+	},
+	"shoppingCart": {
+		"title": "shoppingCart.title"
+	},
+	"allProducts": {
+		"title": "allProducts.title"
 	}
 }

@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var flash = require('connect-flash');
 var session = require('express-session');
+var MongoStore = require('connect-mongo') (session);
 var bodyParser = require("body-parser");
 var passport = require("./routes/user/passport");
 var fs = require('fs');
@@ -16,13 +17,15 @@ var url = require('url');
 var glob = require( 'glob' );
 var language_dict = {};
 var indexRouter = require('./routes/index');
-var shopRouter = require('./routes/allproducts'); 
+var shopRouter = require('./routes/allProducts'); 
 var aboutRouter = require('./routes/about');
 var usersRouter = require('./routes/users');
 var searchRouter = require('./routes/search');
 var addRouter = require('./routes/add');
-const language = require('./routes/language')
-const i18n = require('./i18n.config')
+var cartRouter = require('./routes/addToCart');
+var cartViewRouter = require('./routes/shoppingCart');
+const language = require('./routes/language');
+const i18n = require('./i18n.config');
 //var expressLayouts = require('express-ejs-layouts');
 
 var registrationRouter = require("./routes/user/registration");
@@ -56,10 +59,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// session for flash
+// session for flash and creating MongoStore for cart
 app.use(cookieParser(process.env.COOKIE_PARSER_SECRET_STRING));
-app.use(session({ secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+app.use(session({ secret: process.env.SESSION_SECRET_STRING, cookie: { maxAge: 60000 }, 
+  resave: false, 
+  saveUninitialized: false, 
+  store: new MongoStore({ mongooseConnection: mongoose.connection }), 
+  cookie: { maxAge: 180 * 60 * 1000 }
+}));
+
 app.use(flash());
+
+//setting up session to be accessed from all views
+app.use(function(req, res, next) {
+
+  res.locals.login = req.isAuthenticated(); 
+  res.locals.session = req.session; 
+  next(); 
+
+})
+
 
 
 
@@ -100,7 +119,9 @@ app.use((req,res,next)=>{
 // });
 
 app.use('/', indexRouter);
-app.use('/allproducts', shopRouter);
+app.use('/allProducts', shopRouter);
+app.use('/add-to-cart', cartRouter); 
+app.use('/shoppingCart', cartViewRouter);
 app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
