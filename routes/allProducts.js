@@ -3,5 +3,5 @@ var router = express.Router();
 var shopController = require('../controllers/shopController');
 
 
-router.get('/', shopController.shopGet);
+router.get('/', shopController.show);
 module.exports = router;

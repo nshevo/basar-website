@@ -2,7 +2,7 @@
 var Product = require('../models/product'); 
 var Cart = require('../models/cart'); 
 
-const shopGet = (req, res, next) =>  {
+const show = (req, res, next) =>  {
     console.log('all products loaded'); 
 
     Product.find(function(err, products) {
@@ -18,7 +18,7 @@ const shopGet = (req, res, next) =>  {
 
 
  module.exports = {
-     shopGet    
+     show   
  }
 
 
