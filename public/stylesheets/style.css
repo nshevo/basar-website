@@ -84,7 +84,7 @@ margin-top: 1.0rem;
   height: 25%;
   resize: none;
 }
-
+/* 
 .thumbnail img {
   max-height: 150px;
 }
@@ -116,7 +116,7 @@ margin-top: 1.0rem;
   display: flex;
   justify-content: center;
   flex-direction: row;
-}
+}  */
 
 input[type="submit"] {
   display: inline-block;

@@ -2,21 +2,34 @@
 <html lang="en">
 
 <%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
 
-<body class="d-flex flex-column min-vh-100">
-    <%- include('./partials/header.ejs') %>
+<div class="allProducts-container">
+  <%- include('./partials/categories.ejs') %>
 
-    <div class="container-fluid bg-white">
-        
-        <div class="row">
-            
-            <div class="col-9" id="main">
-                <h3>Welcome to the Basar!</h3>
-            </div>
+
+<div class="container-fluid">
+  
+
+  <div class="row">
+    <% products.forEach(product => { %>
+      <div class="card" style="width: 14rem;">
+        <img class="card-img-top" src="https://previews.123rf.com/images/aquir/aquir1311/aquir131100316/23569861-sample-grunge-red-round-stamp.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%=product.title %></h5>
+          <p class="card-text"><%=product.description %></p>
+          <div class="price">$<%=product.price %></div>
+          <a href="/add-to-cart/<%=product._id%>" class="btn btn-success pull-right">Add to cart</a>
         </div>
-        <%- include('./partials/categories.ejs') %>
-    </div>
+      </div>
+      
+    <% }) %>
+  </div>
+      
+  <%- include('./partials/footer.ejs') %>
+    
 
-    <%- include('./partials/footer.ejs') %>
-</body>
-</html>
+</div>
+</div>
+
+ </html>

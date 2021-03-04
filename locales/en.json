@@ -109,9 +109,9 @@
 		"message": "Oops, service is currently not available"
 	},
 	"allProducts": {
-		"title": "allProducts.title"
+		"title": "All Products"
 	},
 	"shoppingCart": {
-		"title": "shoppingCart.title"
+		"title": "Shopping Cart"
 	}
 }
