@@ -1,7 +1,13 @@
 
 // renders a homepage
 const homepageGet = (req, res, next) =>  {
-    res.render('index', { title: 'Shopping as it should be' }
+
+    //var r=res;
+    res.render('index',
+     { 
+        title: res.__("index.title"),
+        response: res
+     }
     );
   }
 

@@ -36,7 +36,7 @@ const searchResultsGet = (req, res, next) =>{
                 page = 1;
             }
             console.log('Requested page ' + page);
-            res.render('search', { title: 'Search', products: result, pageNr: page, pageMax: pagesAmount});
+            res.render('search', { title: res.__("search.title"),response:res, products: result, pageNr: page, pageMax: pagesAmount});
         })
         .catch((err) => {
             console.log(err);

@@ -84,7 +84,7 @@ exports.isRegistred = (req, res) => {
     passport.authenticate('jwt', { session: false },
         function (err, user, info) {
             if (!user) {
-                res.render('user/registration', { title: "Registration" });
+                res.render('user/registration', { title: res.__("registration.title"),response: res });
             }
             if (user) {
                 res.redirect('/user/dashboard');

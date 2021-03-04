@@ -85,6 +85,39 @@ margin-top: 1.0rem;
   resize: none;
 }
 
+.thumbnail img {
+  max-height: 150px;
+}
+
+.thumbnail .description {
+  color: #7f7f7f;
+  text-align: left;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.container-fluid{
+  display:flex;
+  justify-content: flex-end;
+  flex-direction:row-reverse
+ }
+
+.row-items {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 input[type="submit"] {
   display: inline-block;
   height: 38px;
@@ -114,6 +147,12 @@ ul {
 }
 ul {
   list-style: circle inside;
+}
+
+/********/
+
+.allProducts-container{
+  display: flex;
 }
 
 /** Source: https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css **/

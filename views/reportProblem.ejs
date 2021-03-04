@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('./partials/head.ejs') %>
 
@@ -42,16 +42,16 @@
                                 </div>
 
                                 <div>
-                                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                    <input type="text" id="subject" name="subject" placeholder="<%=response.__('reportProblem.subject')%>" required>
                                 </div>
 
                                 <div>
                                     <textarea class="reportDescription" name="description" id="description" cols="30"
-                                        rows="10" placeholder="Description" required></textarea>
+                                        rows="10" placeholder="<%=response.__('reportProblem.description')%>" required></textarea>
                                 </div>
 
                                 <div>
-                                    <input type="submit" value="Report">
+                                    <input type="submit" value="<%=response.__('reportProblem.reportBtn')%>">
                                 </div>
                             </form>
 
