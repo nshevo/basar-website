@@ -13,7 +13,7 @@ exports.isNotLoggedIn = (req, res) => {
                 res.redirect("/user/login");
             }
             if (user) {
-                res.render('user/dashboard', { title: "Dashboard", userFirstName: user.firstName, userLastName: user.lastName });
+                res.render('user/dashboard', { title: "Dashboard", response: res, userFirstName: user.firstName, userLastName: user.lastName });
             }
         })(req, res)
 }
