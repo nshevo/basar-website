@@ -17,6 +17,8 @@ exports.logOut = (req, res) => {
         if (req && req.cookies && req.cookies['jwt']) {
           token = req.cookies['jwt'];
           res.cookie('jwt', token, { httpOnly: true, secure: true, maxAge: '0' });
+          req.session = null;
+          req.logout();
           req.flash('success', "You have logged out");
           res.redirect('/user/login');
         }

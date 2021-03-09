@@ -12,8 +12,9 @@ exports.signIn = async (req, res) => {
     let { email, password } = req.body;
 
     await User.findOne({
-        email
-    })
+        email: email
+        //googleID: {$exists: false}
+    }, (err, user) => {console.log(err);console.log('Found user: '+user);})
         .then(async user => {
             if (!user) {
                 req.flash("error", "Email is incorrect");
@@ -66,6 +67,13 @@ exports.signIn = async (req, res) => {
 
 //Login Page - verify login
 exports.isLoggedIn = (req, res) => {
+    // if(!req.user){
+    //     //user not logged in
+    //     res.render('user/login', { title: "Login",response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
+    // }else{
+    //     //user is logged in
+    //     res.redirect('/user/dashboard');
+    // }
     passport.authenticate('jwt', { session: false, failureFlash: false },
         (err, user) => {
             if (!user) {

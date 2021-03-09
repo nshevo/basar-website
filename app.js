@@ -11,6 +11,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo') (session);
 var bodyParser = require("body-parser");
 var passport = require("./controllers/userPassport");
+//require('./passport-setup');
 var fs = require('fs');
 var http = require('http');
 var url = require('url');
@@ -24,6 +25,7 @@ var searchRouter = require('./routes/search');
 var addRouter = require('./routes/add');
 var cartRouter = require('./routes/addToCart');
 var cartViewRouter = require('./routes/shoppingCart');
+var authentificationRouter = require('./routes/authentification');
 const language = require('./routes/language');
 const i18n = require('./i18n.config');
 //var expressLayouts = require('express-ejs-layouts');
@@ -79,11 +81,8 @@ app.use(function(req, res, next) {
 
 })
 
-
-
-
 app.use(passport.initialize());
-
+app.use(passport.session());
 app.use(i18n.init);
 
 // use bootstrap assets
@@ -105,18 +104,6 @@ app.use((req,res,next)=>{
   }
   next();
 })
-//mongoose and mongo sandbox routes
-// app.get('/all-products', (req, res) => {
-//   console.log('here');
-//   Product.find()
-//     .then((result) => {
-//       console.log('result'+result);
-//       res.send(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
 
 app.use('/', indexRouter);
 app.use('/allProducts', shopRouter);
@@ -126,6 +113,7 @@ app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 app.use('/search', searchRouter);
 app.use('/add', addRouter);
+app.use('/auth', authentificationRouter);
 
 app.use("/user/registration", registrationRouter);
 app.use('/user/login', loginRouter);
@@ -134,8 +122,15 @@ app.use("/user/dashboard", dashboardRouter);
 app.use("/reportProblem", reportProblemRouter);
 app.use("/language", language)
 
-
-
+app.get('/logout', (req, res) => {
+  //req.session = null;
+  req.session.destroy((err) => {
+    if(err) {
+        return console.log(err);
+    }
+    res.redirect('/');
+});
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
