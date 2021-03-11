@@ -7,12 +7,12 @@ passport.serializeUser(function(user, done) {
   });
   
   passport.deserializeUser(function(id, done) {
-      User.findById(id).then((user) => {
-        done(null, user);
-      });
-    // User.findById(id, function(err, user) {
-    //   done(err, user);
-    // });
+      // User.findById(id).then((user) => {
+      //   done(null, user);
+      // });
+    User.findById(id, function(err, user) {
+      done(null, user);
+    });
   });
 
 // Use the GoogleStrategy within Passport.
@@ -22,7 +22,7 @@ passport.serializeUser(function(user, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
+    callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, email, done) {
       // check if the user exists in the db

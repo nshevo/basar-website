@@ -13,8 +13,8 @@ exports.signIn = async (req, res) => {
     let { email, password } = req.body;
 
     await User.findOne({
-        email: email
-        //googleID: {$exists: false}
+        email: email,
+        googleID: {$exists: false}
     }, (err, user) => {console.log(err);console.log('Found user: '+user);})
         .then(async user => {
             if (!user) {
@@ -84,16 +84,12 @@ exports.isLoggedIn = (req, res) => {
                 })(req, res)
     }else{
         //user is logged in
+        this.loggedIn = true;
         let user = req.user;
-        console.log(user);
-        console.log(typeof user);
-        console.log('googleID' in user);
         if('googleID' in user){
-            this.loggedIn = true;
-            console.log('redirecting to dashboard');
             res.redirect('/user/dashboard');
         }else if('facebookID' in user){
-            this.loggedIn = true;
+            
         }
     }
 
