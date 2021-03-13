@@ -24,11 +24,10 @@ Basar is an E-commerce platform for buying and selling all types of goods. This 
 
 #### Easy
 
-1. Homepage with dynamic content - Andriy
-2. Header and footer with Subpages - Andriy
-3. Multilingualism - Kurt
-4. Profile/Dashboard - Nikita
-5. Problem Report via Form - Nikita
+1. Header and footer with Subpages - Andriy
+2. Multilingualism - Kurt
+3. Profile/Dashboard - Nikita
+4. Problem Report via Form - Nikita
 
 #### Medium
 
@@ -39,9 +38,9 @@ Basar is an E-commerce platform for buying and selling all types of goods. This 
 
 #### Hard
 
-1. Payment integration - Andriy
+1. Payment integration
 2. Auction
-3. Authorization with social media - Kurt
+3. Authorization with social media - Andriy
 
 ## Authors
 
