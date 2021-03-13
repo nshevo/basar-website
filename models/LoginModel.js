@@ -7,12 +7,12 @@ const mongoose = require("mongoose");
 const LoginSchema = mongoose.Schema({
     email: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+        //unique: false
     },
     password: {
         type: String,
-        required: true,
+        required: false,
         min: 6
     },
     firstName: {
@@ -25,19 +25,25 @@ const LoginSchema = mongoose.Schema({
     },
     country: {
         type: String,
-        required: true
+        required: false
     },
     city: {
         type: String,
-        required: true
+        required: false
     },
     streetHouseNumber: {
         type: String,
-        required: true
+        required: false
     },
     createdAt: {
         type: Date,
         default: Date.now()
+    },
+    googleID: {
+        type: String
+    },
+    facebookID: {
+        type: String
     }
 });
 

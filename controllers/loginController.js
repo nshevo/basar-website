@@ -7,13 +7,15 @@ var jwt = require("jsonwebtoken");
 var argon2 = require("argon2");
 const passport = require("passport");
 const User = require("../models/LoginModel");
+exports.loggedIn = false;
 
 exports.signIn = async (req, res) => {
     let { email, password } = req.body;
 
     await User.findOne({
-        email
-    })
+        email: email,
+        googleID: {$exists: false}
+    }, (err, user) => {console.log(err);console.log('Found user: '+user);})
         .then(async user => {
             if (!user) {
                 req.flash("error", "Email is incorrect");
@@ -58,7 +60,8 @@ exports.signIn = async (req, res) => {
                 // save jwt token in the cookie
                 // add: secure: true when deploying
                 res.cookie('jwt', token, { httpOnly: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
-
+                this.loggedIn = true;
+                console.log(this.loggedIn);
                 res.status(200).redirect("/user/dashboard");
             });
         });
@@ -66,13 +69,27 @@ exports.signIn = async (req, res) => {
 
 //Login Page - verify login
 exports.isLoggedIn = (req, res) => {
-    passport.authenticate('jwt', { session: false, failureFlash: false },
-        (err, user) => {
-            if (!user) {
-                res.render('user/login', { title: "Login",response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
-            }
-            if (user) {
-                res.redirect('/user/dashboard');
-            }
-        })(req, res)
+    if(!req.user){
+        //user not logged in
+        passport.authenticate('jwt', { session: false, failureFlash: false },
+                (err, user) => {
+                    if (!user) {
+                        res.render('user/login', { title: "Login",response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
+                    }
+                    if (user) {
+                        res.redirect('/user/dashboard');
+                        this.loggedIn = true;
+                    }
+                })(req, res)
+    }else{
+        //user is logged in
+        this.loggedIn = true;
+        let user = req.user;
+        if('googleID' in user){
+            res.redirect('/user/dashboard');
+        }else if('facebookID' in user){
+            
+        }
+    }
+
 }
