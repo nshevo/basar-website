@@ -62,7 +62,6 @@ exports.signIn = async (req, res) => {
                 res.cookie('jwt', token, { httpOnly: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
                 this.loggedIn = true;
                 console.log(this.loggedIn);
-
                 res.status(200).redirect("/user/dashboard");
             });
         });

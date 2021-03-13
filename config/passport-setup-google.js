@@ -1,15 +1,12 @@
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const User = require('./models/LoginModel');
+const User = require('../models/LoginModel');
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
   
   passport.deserializeUser(function(id, done) {
-      // User.findById(id).then((user) => {
-      //   done(null, user);
-      // });
     User.findById(id, function(err, user) {
       done(null, user);
     });
@@ -25,6 +22,7 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, email, done) {
+      console.log("callback function");
       // check if the user exists in the db
       User.findOne({googleID: email._json.sub}).then((currentUser) => {
           if (currentUser){
@@ -44,11 +42,5 @@ passport.use(new GoogleStrategy({
             });
           }
       });
-      
-      //console.log(email);
-      //return done(null, profile);
-    //    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //      return done(err, user);
-    //    });
   }
 ));

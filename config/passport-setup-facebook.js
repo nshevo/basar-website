@@ -1,6 +1,6 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-const User = require('./models/LoginModel');
+const User = require('../models/LoginModel');
 
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -19,6 +19,7 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'displayName', 'email', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
+      console.log("Facebook - callback function");
       // check if the user exists in the db
       User.findOne({facebookID: profile._json.id}).then((currentUser) => {
         if (currentUser){
