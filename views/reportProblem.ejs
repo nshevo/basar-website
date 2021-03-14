@@ -15,7 +15,7 @@
                             </h3>
 
                             <ul>
-                                <% if(messages.success.length) { %>
+                                <% if(messages.success.length > 0) { %>
                                     <li>
                                         <%= messages.success %>
                                     </li>
@@ -23,7 +23,7 @@
                             </ul>
 
                             <ul>
-                                <% if(messages.error.length){ %>
+                                <% if(messages.error.length > 0){ %>
                                     <li>
                                         <%= messages.error %>
                                     </li>

@@ -6,6 +6,7 @@
 const passport = require("passport");
 const nodeMailer = require("nodemailer");
 
+
 exports.isUserLoggedIn = (req, res) => {
     passport.authenticate('jwt', { session: false, failureFlash: false },
         (err, user) => {
@@ -80,7 +81,7 @@ exports.reportProblem = (req, res) => {
             reportError(req, res);
         } else {
             req.flash("success", "Thank you for reporting a problem");
-            res.status(200).render('reportProblem', {
+            return res.status(200).render('reportProblem', {
                 title: res.__("reportProblem.title"),response:res, messages: {
                     error: req.flash('error'),
                     success: req.flash('success')
