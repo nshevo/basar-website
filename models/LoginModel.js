@@ -12,7 +12,7 @@ const LoginSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: false,
+        required: function() { return this.facebookID  === null && this.googleID === null; },
         min: 6
     },
     firstName: {

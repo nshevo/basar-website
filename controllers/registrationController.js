@@ -16,7 +16,7 @@ exports.signUp = async (req, res) => {
 
     if (isAnyFieldEmpty) {
         errors.push({ message: "Please enter all fields" });
-        return res.status(422).render('user/registration', { title: "Registration", errors });
+        return res.status(422).render('user/registration', { title: "Registration", response: res, errors });
     }
 
     if (password.length < 6) {
@@ -50,7 +50,7 @@ exports.signUp = async (req, res) => {
         }
 
         if (errors.length > 0) {
-            return res.status(422).render('user/registration', { title: "Registration", errors });
+            return res.status(422).render('user/registration', { title: "Registration",response: res, errors });
         }
 
         //Create new User with all the input information
