@@ -26,7 +26,7 @@ var cartViewRouter = require('./routes/shoppingCart');
 var authentificationRouter = require('./routes/authentification');
 var chatroomRouter = require('./routes/chatrooms'); 
 const language = require('./routes/language');
-const i18n = require('./i18n.config');
+const i18n = require('./config/i18n.config');
 //var expressLayouts = require('express-ejs-layouts');
 
 var registrationRouter = require("./routes/user/registration");
@@ -97,8 +97,8 @@ app.use('/assets/vendor/popper.js', express.static(
 
 //setting locale for selected language from cookie
 app.use((req,res,next)=>{
-  var cookie=req.cookies.language;
-  if(typeof cookie!== 'undefined'){
+  var cookie = req.cookies.language;
+  if(typeof cookie !== 'undefined'){
     res.setLocale(cookie)
   }
   next();

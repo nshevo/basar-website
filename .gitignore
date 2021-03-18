@@ -24,4 +24,4 @@
 .idea/
 /*.iml
 coverage
-/nyc_output
+/.nyc_output
