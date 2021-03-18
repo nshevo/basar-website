@@ -113,6 +113,7 @@
 		"title": "All Products"
 	},
 	"shoppingCart": {
-		"title": "Shopping Cart"
+		"title": "Shopping Cart",
+        "add-to-cart": "Add to cart"
 	}
 }

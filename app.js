@@ -96,7 +96,7 @@ app.use('/assets/vendor/popper.js', express.static(
 
 
 //setting locale for selected language from cookie
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
   var cookie = req.cookies.language;
   if(typeof cookie !== 'undefined'){
     res.setLocale(cookie)

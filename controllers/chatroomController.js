@@ -6,7 +6,7 @@ var show = (req, res, next) => {
     res.render('roomSelection', {rooms: rooms,response: res});
 }
 
-var rooms =(req, res) => {
+var createRoom = (req, res) => {
     const rooms=req.app.get('rooms');
     const io=req.app.get('io');
     rooms[req.body.room] = { users: {} }
@@ -23,6 +23,6 @@ var rooms =(req, res) => {
 
 module.exports = {
     show,
-    rooms,
+    createRoom,
     room
 }

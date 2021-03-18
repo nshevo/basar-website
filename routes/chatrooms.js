@@ -5,7 +5,7 @@ var chatroomController = require('../controllers/chatroomController');
 
 router.get('/', chatroomController.show);
 
-router.post('/room',chatroomController.rooms)
+router.post('/room',chatroomController.createRoom)
 
 router.get('/:room',chatroomController.room)
 

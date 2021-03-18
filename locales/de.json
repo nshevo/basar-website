@@ -99,7 +99,8 @@
 		"linkRegister": "Registrieren"
 	},
 	"shoppingCart": {
-		"title": "Einkaufswagen"
+		"title": "Einkaufswagen",
+        "add-to-cart": "In den Einkaufswagen"
 	},
 	"allProducts": {
 		"title": "Alle Produkte"
