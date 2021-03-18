@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var chatroomController = require('../controllers/chatroomController');
+var chatroomsController = require('../controllers/chatroomsController');
 
 
-router.get('/', chatroomController.show);
+router.get('/', chatroomsController.index);
 
-router.post('/room',chatroomController.createRoom)
+router.post('/room',chatroomsController.create)
 
-router.get('/:room',chatroomController.room)
+router.get('/:room',chatroomsController.show)
 
 
 module.exports = router;

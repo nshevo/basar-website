@@ -24,7 +24,7 @@ var addRouter = require('./routes/add');
 var cartRouter = require('./routes/addToCart');
 var cartViewRouter = require('./routes/shoppingCart');
 var authentificationRouter = require('./routes/authentification');
-var chatroomRouter = require('./routes/chatrooms'); 
+var chatroomsRouter = require('./routes/chatrooms'); 
 const language = require('./routes/language');
 const i18n = require('./config/i18n.config');
 //var expressLayouts = require('express-ejs-layouts');
@@ -120,7 +120,7 @@ app.use("/user/logout", logoutRouter);
 app.use("/user/dashboard", dashboardRouter);
 app.use("/reportProblem", reportProblemRouter);
 app.use("/language", language)
-app.use('/chatrooms', chatroomRouter);
+app.use('/chatrooms', chatroomsRouter);
 
 app.get('/logout', (req, res) => {
   //req.session = null;

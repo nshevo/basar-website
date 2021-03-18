@@ -1,12 +1,12 @@
 //const rooms = {}
 
-var show = (req, res, next) => {
+var index = (req, res, next) => {
     const rooms=req.app.get('rooms');
     console.log("chatrooms loading...")
     res.render('roomSelection', {rooms: rooms,response: res});
 }
 
-var createRoom = (req, res) => {
+var create = (req, res) => {
     const rooms=req.app.get('rooms');
     const io=req.app.get('io');
     rooms[req.body.room] = { users: {} }
@@ -17,12 +17,12 @@ var createRoom = (req, res) => {
     io.emit('room-created', req.body.room)
   }
 
-  var room = (req, res) => {
+  var show = (req, res) => {
     res.render('room', { roomName: req.params.room ,response: res})
 }
 
 module.exports = {
-    show,
-    createRoom,
-    room
+    index,
+    create,
+    show
 }
