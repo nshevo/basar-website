@@ -2,7 +2,7 @@ var Product = require('../models/product');
 var Cart = require('../models/cart'); 
 
 // renders a homepage
-const homepageGet = (req, res, next) =>  {
+const index = (req, res, next) =>  {
     console.log('all products loaded'); 
 
     Product.find(function(err, products) {
@@ -17,5 +17,5 @@ const homepageGet = (req, res, next) =>  {
   }
 
  module.exports = {
-     homepageGet
+     index
  }
