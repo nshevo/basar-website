@@ -19,7 +19,8 @@
 		"reportProblem": "Report Problems",
 		"copyRight": {
 			"message": "CopyRight © 2020 Intellectual property of Mr. Robot"
-		}
+		},
+        "chatrooms": "Chatrooms"
 	},
 	"about": {
 		"title": "Express",

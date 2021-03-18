@@ -19,7 +19,8 @@
 		"reportProblem": "Probleme melden",
 		"copyRight": {
 			"message": "CopyRight © 2020 Geistiges Eigentum von Mr. Robot"
-		}
+		},
+		"chatrooms": "Chaträume"
 	},
 	"about": {
 		"title": "Ausdrücken",
@@ -102,5 +103,8 @@
 	},
 	"allProducts": {
 		"title": "Alle Produkte"
+	},
+	"checkout": {
+		"title": "Checkout"
 	}
 }
