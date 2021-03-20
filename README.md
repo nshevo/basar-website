@@ -28,22 +28,24 @@ Basar is an E-commerce platform for buying and selling all types of goods. This 
 2. Multilingualism - Kurt
 3. Profile/Dashboard - Nikita
 4. Problem Report via Form - Nikita
+5. Landing page with dynamic content - Kurt
 
 #### Medium
 
 1. Registration and Login with DB - Nikita
 2. Search - Andriy
 3. Filter
-4. Cart
+4. Shopping Cart - Kurt
 
 #### Hard
 
 1. Payment integration
 2. Auction
 3. Authorization with social media - Andriy
+4. Chatroom integration - Kurt
 
 ## Authors
 
 1. Andriy Lyubar
 2. Nikita Shevchenko
-3. Kurt
+3. Kurt Leißering

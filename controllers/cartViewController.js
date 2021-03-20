@@ -2,7 +2,7 @@ var Cart = require('../models/cart');
 
 
 // render shoppingcart page
-var cartGet = (req, res, next) => {
+var index = (req, res, next) => {
     if (!req.session.cart) {
         console.log("no cart here");
         return res.render('shoppingCart', {title:res.__("shoppingCart.title"), response: res, products: null });
@@ -14,5 +14,5 @@ var cartGet = (req, res, next) => {
 }
 
 module.exports = {
-    cartGet
+    index
 }
