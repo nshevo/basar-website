@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,13 @@
   <div id="room-container">
     <% Object.keys(rooms).forEach(room => { %>
       <div><%= room %></div>
-      <a href="/chatrooms/<%= room %>">Join</a>
+      <a href="/chatrooms/<%= room %>"><%= response.__("chatrooms.join")%></a>
       <!-- <a href="#" onclick="joinRoom('room')">Join</a> -->
     <% }) %>
   </div>
   <form action="/chatrooms/room" method="POST">
     <input name="room" type="text" required>
-    <button type="submit">New Room</button>
+    <button type="submit"><%= response.__("chatrooms.createNew")%></button>
   </form>
 </body>
 <%- include('./partials/footer.ejs') %>

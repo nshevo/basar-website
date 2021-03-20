@@ -100,12 +100,17 @@
 	},
 	"shoppingCart": {
 		"title": "Einkaufswagen",
-        "add-to-cart": "In den Einkaufswagen"
+		"add-to-cart": "In den Einkaufswagen",
+        "total": "Gesamtpreis"
 	},
 	"allProducts": {
 		"title": "Alle Produkte"
 	},
 	"checkout": {
 		"title": "Checkout"
+	},
+	"chatrooms": {
+		"createNew": "Neuer Raum",
+        "join": "Beitreten"
 	}
 }

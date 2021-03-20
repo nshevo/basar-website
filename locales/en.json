@@ -114,6 +114,11 @@
 	},
 	"shoppingCart": {
 		"title": "Shopping Cart",
-        "add-to-cart": "Add to cart"
-	}
+        "add-to-cart": "Add to cart",
+        "total": "total"
+	},
+    "chatrooms": {
+        "createNew": "New Room",
+        "join": "Join"
+    }
 }
