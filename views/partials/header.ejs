@@ -1,0 +1,36 @@
+<nav class="navbar navbar-dark text-white bg-dark basar-header">
+    <a class="navbar-brand" href="/" id="bla">
+        <img class="float-left d-inline-block align-top" src="/images/logo.png" alt="" id="logo">
+    </a>
+    <form class="mx-2 my-auto d-inline w-50" action="/search" method="GET">
+        <div class="input-group md-form form-sm form-1 pl-0">
+            <input class="form-control mr-sm-0 border border-right-0" type="text" placeholder="Search"
+                aria-label="Search" id="searchField" name="item" required>
+            <!-- <input type="text" class="form-control border border-right-0" placeholder="Search..." aria-label="Search"> -->
+            <!-- <span class="input-group-append"> -->
+            <!-- <button class="btn btn-dark btn-outline-secondary text-white my-2 my-sm-0" id="navBarSearchBtn" data-toggle="button" type="submit">Search</button> -->
+            <button class="btn btn-dark btn-outline-secondary text-white aqua-gradient btn-rounded btn-sm my-0"
+                type="submit"><%= response.__("header.search")%></button>
+            <!-- </span> -->
+        </div>
+    </form>
+    <div>
+        <a class="text-white" href="/user/login">Login</a> | <a class="text-white"
+            href="/user/registration"><%= response.__("header.register")%></a>
+    </div>
+    <!-- Default switch -->
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="themeSwitch()">
+        <label class="custom-control-label" for="customSwitches" id="switchText">Light</label>
+    </div>
+    <div style="margin-top: 16px">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" onchange="location = this.value">
+            <option selected disabled>Select language</option>
+            <option value="/language/en" <%= (response.getLocale()=="en") ? "selected" : "" %>>EN</option>
+            <option value="/language/de" <%= (response.getLocale()=="de") ? "selected" : "" %>>DE</option> 
+          </select>
+        </div>
+
+    <a href="/shoppingCart/"><img src="/images/cart.png" width="50" height="50" alt="">
+    </a>
+</nav>
