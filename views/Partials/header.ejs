@@ -20,8 +20,8 @@
     </div>
     <!-- Default switch -->
     <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="customSwitches">
-        <label class="custom-control-label" for="customSwitches">Light/Dark</label>
+        <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="themeSwitch()">
+        <label class="custom-control-label" for="customSwitches" id="switchText">Light</label>
     </div>
     <div style="margin-top: 16px">
         <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" onchange="location = this.value">
