@@ -1,14 +1,12 @@
-//const rooms = {}
-
 var index = (req, res, next) => {
-    const rooms=req.app.get('rooms');
+    const rooms = req.app.get('rooms');
     console.log("chatrooms loading...")
-    res.render('roomSelection', {rooms: rooms,response: res});
+    res.render('roomSelection', {rooms: rooms,response: res, host: process.env.HOST});
 }
 
 var create = (req, res) => {
-    const rooms=req.app.get('rooms');
-    const io=req.app.get('io');
+    const rooms = req.app.get('rooms');
+    const io = req.app.get('io');
     rooms[req.body.room] = { users: {} }
     res.redirect(`/chatrooms/${req.body.room}`)
     console.log('Rooms', rooms)
@@ -18,7 +16,7 @@ var create = (req, res) => {
   }
 
   var show = (req, res) => {
-    res.render('room', { roomName: req.params.room ,response: res})
+    res.render('room', { roomName: req.params.room ,response: res, host: process.env.HOST})
 }
 
 module.exports = {

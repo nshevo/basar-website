@@ -1,4 +1,4 @@
-const socket = io('https://basar-website.herokuapp.com')
+const socket = io(window.location.host)
 const messageContainer = document.getElementById('message-container')
 const roomContainer = document.getElementById('room-container')
 const messageForm = document.getElementById('send-container')
