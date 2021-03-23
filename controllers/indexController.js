@@ -11,7 +11,7 @@ const index = (req, res, next) =>  {
             next(err);
         } else {
          
-            res.render('allProducts', {title:res.__("allProducts.title"), response: res, products: products});
+            res.render('index', {title:res.__("index.title"), response: res, products: products});
         }
     }); 
   }

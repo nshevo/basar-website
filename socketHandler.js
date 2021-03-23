@@ -1,4 +1,3 @@
-
 module.exports = (io, rooms)=> {
     io.on('connection', socket => { 
         socket.on('new-user', (room, name) => {
