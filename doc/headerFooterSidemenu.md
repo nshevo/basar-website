@@ -1,3 +1,5 @@
+# Header, Footer, Seitenmenü Feature
+
 ## Beschreibung
 Bei diesem Feature geht es um das visuelle Erscheinen der Webanwendung. Es wurden ein Header, ein Footer und ein Seitenmenü mit angebotenen Warenkategorien erstellt, die den Nutzern helfen sollen, durch die Seite zu navigieren. Das Seitenmenü hat folgende Kategorien (alle alphabetisch sortiert): 
 

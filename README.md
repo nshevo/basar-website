@@ -21,6 +21,7 @@ npm test
 Basar is an E-commerce platform for buying and selling all types of goods. This webapplication was written in JavaScript using the Express Framework.
 
 ### Featurelist
+Documentation regarding every feature are in the "doc" Folder.
 
 #### Easy
 

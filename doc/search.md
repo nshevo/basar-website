@@ -1,3 +1,5 @@
+# Suche Feature
+
 ## Beschreibung
 Das ist einer der wichtigsten Features der Anwendung. Hier geht es darum, die Ware nach dem Namen zu suchen. Die Suchleiste befindet sich im Header der Seite. Nach der Eingabe des Suchbegriffes, soll die Datenbank nach den passenden Einträgen durchgesucht werden. Am ende wird eine Liste mit den Ergebnissen zurückgeliefert und auf der Seite aufgelistet. Jeder einzelne Ware verfügt uüber eine Beschreibung und ein Preis.
 

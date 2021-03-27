@@ -1,3 +1,5 @@
+# Light/Dark Mode Feature
+
 ## Beschreibung
 Light/Dark Feature erlaubt dem Benutzer den Erscheinungsmode von der Seite zu ändern. Light Mode entspricht den Standart Format und der Dark Mode den dunklen Format. Die Änderung des Erscheinungsbildes wird duch das Umschalten eines Reglers betätigt, der sich in dem Header der Anwendung befindet. Die Änderung des Modus, soll auch nach der Neuladung der Seite beibehalten werden.
 
