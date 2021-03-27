@@ -8,12 +8,12 @@
   <%- include('./partials/categories.ejs') %>
 
 
-<div class="container-fluid">
+<div class="container-fluid" id="body">
   
 
   <div class="row">
     <% products.forEach(product => { %>
-      <div class="card" style="width: 14rem;">
+      <div class="card" style="width: 14rem;" id="cards">
         <img class="card-img-top" src="https://previews.123rf.com/images/aquir/aquir1311/aquir131100316/23569861-sample-grunge-red-round-stamp.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%=product.title %></h5>
