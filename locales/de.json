@@ -108,16 +108,14 @@
 	"allProducts": {
 		"title": "Alle Produkte"
 	},
-<<<<<<< HEAD
 	"dashboard": {
 		"welcomeMessage": "Wilkommen, "
-=======
+	},
 	"checkout": {
 		"title": "Checkout"
 	},
 	"chatrooms": {
 		"createNew": "Neuer Raum",
         "join": "Beitreten"
->>>>>>> 36c8b852b8c9ec9b3c13b807a982859bab60ee6b
 	}
 }
