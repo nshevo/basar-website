@@ -35,10 +35,13 @@ var logoutRouter = require("./routes/user/logout");
 var dashboardRouter = require("./routes/user/dashboard");
 var reportProblemRouter = require("./routes/reportProblem");
 
-
+var enforce = require('express-sslify');
 
 
 var app = express();
+
+// heroku https
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 // connection to mongodb
 const MONGO_DB_USER = process.env.MONGO_DB_USER;
