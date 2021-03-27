@@ -13,6 +13,8 @@ function darkMode(){
     $("div[id='sticky-sidebar']").toggleClass("text-dark text-white");
     $("div[id='cards']").addClass("text-white bg-dark");
     $("div[id='body']").addClass("bg-dark");
+    $("body").addClass("bg-dark");
+    $("h1, h2, h3").addClass("text-white");
     $("[id='categories_titel']").addClass("text-white");
     $("a[class^='navbar-text']").each((i, ele) => {
         console.log(ele);
@@ -27,6 +29,8 @@ function darkMode(){
     $("div[id='cards']").removeClass("text-white bg-dark");
     $("div[id='body']").removeClass("bg-dark");
     $("[id='categories_titel']").removeClass("text-white");
+    $("h1, h2, h3").removeClass("text-white");
+    $("body").removeClass("bg-dark");
     $("a[class^='navbar-text']").each((i, ele) => {
         console.log(ele);
         $(ele).toggleClass('text-white text-dark');
