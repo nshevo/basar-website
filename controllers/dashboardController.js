@@ -18,7 +18,8 @@ exports.isNotLoggedIn = (req, res) => {
     //     console.log(req.user.lastName);
     //     res.render('user/dashboard.ejs', { title: "Dashboard", response: res, userFirstName: req.user.firstName, userLastName: req.user.lastName });
     // }
-    console.log("We are here!"+loginController.loggedIn);
+    // debug section
+    //console.log("We are here!"+loginController.loggedIn);
     if(!loginController.loggedIn){
         //user not logged in
         res.redirect("/user/login");

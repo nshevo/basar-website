@@ -15,7 +15,10 @@ exports.signIn = async (req, res) => {
     await User.findOne({
         email: email,
         googleID: {$exists: false}
-    }, (err, user) => {console.log(err);console.log('Found user: '+user);})
+    }, (err, user) => {
+        //debug section
+        //console.log(err);console.log('Found user: '+user);
+    })
         .then(async user => {
             if (!user) {
                 req.flash("error", "Email is incorrect");
@@ -61,7 +64,7 @@ exports.signIn = async (req, res) => {
                 // add: secure: true when deploying
                 res.cookie('jwt', token, { httpOnly: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
                 this.loggedIn = true;
-                console.log(this.loggedIn);
+                //console.log(this.loggedIn);
                 res.status(200).redirect("/user/dashboard");
             });
         });

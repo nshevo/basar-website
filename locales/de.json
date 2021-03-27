@@ -27,7 +27,9 @@
 		"subHeading": "Diese E-Commerce-Plattform wurde von 3 Studenten nur zu Bildungszwecken erstellt"
 	},
 	"dashBoard": {
-		"title": "DashBoard"
+		"title": "DashBoard",
+		"welcomeMessage": "Willkommen, ",
+		"logout": "Abmelden"
 	},
 	"registration": {
 		"title": "Anmeldung",
@@ -102,5 +104,8 @@
 	},
 	"allProducts": {
 		"title": "Alle Produkte"
+	},
+	"dashboard": {
+		"welcomeMessage": "Wilkommen, "
 	}
 }

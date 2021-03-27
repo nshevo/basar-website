@@ -87,7 +87,7 @@ exports.isRegistred = (req, res) => {
                 res.render('user/registration', { title: res.__("registration.title"),response: res });
             }
             if (user) {
-                //res.redirect('/user/dashboard');
+                res.redirect('/user/dashboard');
             }
         })(req, res)
 }

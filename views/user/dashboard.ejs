@@ -14,10 +14,10 @@
                                 <%- title %>
                             </h3>
 
-                            <h5>Hello <%= userFirstName %>
+                            <h5><%= response.__("dashBoard.welcomeMessage") %> <%= userFirstName %>
                                     <%= userLastName %>
                             </h5>
-                            <a href="/user/logout">Logout</a>
+                            <a href="/user/logout"><%= response.__("dashBoard.logout") %></a>
 
                         </div>
                 </div>

@@ -27,7 +27,9 @@
 		"subHeading": "This E-commerce platform was created by 3 students only for educational purpose"
 	},
 	"dashBoard": {
-		"title": "DashBoard"
+		"title": "DashBoard",
+		"welcomeMessage": "Welcome, ",
+		"logout": "Logout"
 	},
 	"registration": {
 		"title": "Registration",
@@ -43,7 +45,7 @@
 		"button": {
 			"text": "Register"
 		},
-		"alreadyRegister": "Already Registerd"
+		"alreadyRegister": "Already Registred"
 	},
 	"reportProblem": {
 		"title": "Report Problems",
