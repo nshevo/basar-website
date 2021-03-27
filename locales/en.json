@@ -102,7 +102,7 @@
 	},
 	"login": {
 		"placeHolders": {
-			"password": "login.placeHolders.password"
+			"password": "Password"
 		},
 		"title": "Login",
 		"login": "Login",
