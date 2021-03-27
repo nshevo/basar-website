@@ -4,5 +4,4 @@ Light/Dark Feature erlaubt dem Benutzer den Erscheinungsmode von der Seite zu ä
 ## Implementierung
 Dieses Feature wurde mit Hilfe von Javascript und JQuery-Bibliothek entwickelt. Der Script liegt in der Datei: themeSwitch.js. Es werden dynamisch die Bootstrap Klassen geändertm die für die Farbe der Hintergrund oder des Schriftes zuständig sind. Zum Besipiel, die Klassen bg-light oder text-white, schauen nach dem Umschalten in den Dark Modus so aus: bg-dark, text-black. Dieses Feature ist vollständig auf der Seite des Clients implementiert und macht einen Eintrag in den lokalen Speicher vom Brauser, damit die Einstellung nach jeder Neuladung der Seite beibehalten bleibt. 
 
-https://api.jquery.com/
 [JQuery-Doc](https://api.jquery.com/)
