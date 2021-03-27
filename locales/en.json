@@ -15,12 +15,12 @@
 	"footer": {
 		"about": "About",
 		"help": "Help",
-		"contact": "Contacts",
-		"reportProblem": "Report Problems",
+		"contact": "Contact Us",
+		"reportProblem": "Report Problem",
 		"copyRight": {
 			"message": "CopyRight © 2020 Intellectual property of Mr. Robot"
 		},
-        "chatrooms": "Chatrooms"
+		"chatrooms": "Chatrooms"
 	},
 	"about": {
 		"title": "Express",
@@ -49,7 +49,7 @@
 		"alreadyRegister": "Already Registred"
 	},
 	"reportProblem": {
-		"title": "Report Problems",
+		"title": "Report Problem",
 		"subject": "Subject",
 		"description": "Description",
 		"reportBtn": "Report"
@@ -104,7 +104,9 @@
 		"placeHolders": {
 			"password": "login.placeHolders.password"
 		},
-		"linkRegister": "login.linkRegister"
+		"title": "Login",
+		"login": "Login",
+		"register": "Create account"
 	},
 	"error": {
 		"title": "Server error",
@@ -116,11 +118,11 @@
 	},
 	"shoppingCart": {
 		"title": "Shopping Cart",
-        "add-to-cart": "Add to cart",
-        "total": "total"
+		"add-to-cart": "Add to cart",
+		"total": "total"
 	},
-    "chatrooms": {
-        "createNew": "New Room",
-        "join": "Join"
-    }
+	"chatrooms": {
+		"createNew": "New Room",
+		"join": "Join"
+	}
 }

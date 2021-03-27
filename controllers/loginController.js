@@ -77,7 +77,7 @@ exports.isLoggedIn = (req, res) => {
         passport.authenticate('jwt', { session: false, failureFlash: false },
                 (err, user) => {
                     if (!user) {
-                        res.render('user/login', { title: "Login", response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
+                        res.render('user/login', { title: res.__("login.title"), response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
                     }
                     if (user) {
                         res.redirect('/user/dashboard');

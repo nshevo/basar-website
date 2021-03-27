@@ -43,15 +43,15 @@
                                     <input type="email" id="email" name="email" placeholder="E-Mail" required>
                                 </div>
                                 <div>
-                                    <input type="password" id="password" name="password" placeholder="Password"
+                                    <input type="password" id="password" name="password" placeholder="<%= response.__("login.placeHolders.password") %>"
                                         required>
                                 </div>
                                 <div>
-                                    <input type="submit" value="Login">
+                                    <button class="btn btn-outline-dark" type="submit"><%= response.__("login.login") %></button>
                                     <a class="btn btn-outline-primary" href="/auth/google"><img src="/images/google_icon.png" width="20" height="20"> Login with Google</a>
                                     <a class="btn btn-outline-primary" href="/auth/facebook"><img src="/images/facebook_icon.png" width="20" height="20"> Login with Facebook</a>
                                 </div>
-                                <a href="/user/registration">Register</a>
+                                <a href="/user/registration"><%= response.__("login.register") %></a>
                             </form>
                         </div>
                 </div>

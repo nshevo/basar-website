@@ -15,8 +15,8 @@
 	"footer": {
 		"about": "Über uns",
 		"help": "Hilfe",
-		"contact": "Kontakte",
-		"reportProblem": "Probleme melden",
+		"contact": "Kontakt",
+		"reportProblem": "Problem melden",
 		"copyRight": {
 			"message": "CopyRight © 2020 Geistiges Eigentum von Mr. Robot"
 		},
@@ -49,10 +49,10 @@
 		"alreadyRegister": "Bereits registriert"
 	},
 	"reportProblem": {
-		"title": "Probleme melden",
+		"title": "Problem melden",
 		"subject": "Thema",
 		"description": "Beschreibung",
-		"reportBtn": "Bericht"
+		"reportBtn": "Melden"
 	},
 	"search": {
 		"title": "Suche",
@@ -98,12 +98,14 @@
 		"placeHolders": {
 			"password": "Passwort"
 		},
-		"linkRegister": "Registrieren"
+		"title": "Einloggen",
+		"login": "Einloggen",
+		"register": "Konto erstellen"
 	},
 	"shoppingCart": {
 		"title": "Einkaufswagen",
 		"add-to-cart": "In den Einkaufswagen",
-        "total": "Gesamtpreis"
+		"total": "Gesamtpreis"
 	},
 	"allProducts": {
 		"title": "Alle Produkte"
@@ -116,6 +118,6 @@
 	},
 	"chatrooms": {
 		"createNew": "Neuer Raum",
-        "join": "Beitreten"
+		"join": "Beitreten"
 	}
 }
