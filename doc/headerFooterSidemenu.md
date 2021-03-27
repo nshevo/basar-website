@@ -35,6 +35,4 @@ Der Footer besteht aus folgende Komponenten:
 ## Implementierung
 Das ganze Design wurde mit dem Bootstrap Framework implementiert. Das gestelten der Seite erfolgt dabei durch das Hinzufügen von vordefinierten Klassen in die HTML-Elemente.
 
-Bootstrap:
-https://getbootstrap.com/docs/5.0/getting-started/introduction/
-[Bootstrap-Doc](https://getbootstrap.com)
+[Bootstrap-Doc](https://getbootstrap.com/docs/5.0/getting-started/introduction/)

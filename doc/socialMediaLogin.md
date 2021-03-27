@@ -4,6 +4,4 @@ Die Nutzer haben eine Möglichkeit sich mit der externen Service in unsere Weban
 ## Implementierung
 Bei der Implementierung wurde die PassportJS Middleware mit zwei unterschiedlichen Strategies: GoogleStrategy und FacebookStrategy. Die Einstellungen für die beiden, befinden sich in Dateien: passport-setup-google.js und passport-setup-google.js. Es existiert ein gemeinsamer Router für alle Authentifizierungen: authentication.js. Die Steuerung von erfolt durch den Controller: authentificationController.js.
 
-Passport:
-http://www.passportjs.org/docs/
-[Passport-Doc](http://www.passportjs.org)
+[Passport-Doc](http://www.passportjs.org/docs/)
