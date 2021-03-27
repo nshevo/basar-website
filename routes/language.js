@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/:lang', (req,res)=>{
 
     //get the user selected lang from dropdown
-    var lang=req.params.lang
+    var lang = req.params.lang
 
     //setting cookies based on selected language
     if(lang == "de"){

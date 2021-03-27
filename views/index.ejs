@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/header.ejs') %>
@@ -19,17 +19,16 @@
           <h5 class="card-title"><%=product.title %></h5>
           <p class="card-text"><%=product.description %></p>
           <div class="price">$<%=product.price %></div>
-          <a href="/add-to-cart/<%=product._id%>" class="btn btn-success pull-right">Add to cart</a>
+          <a href="/add-to-cart/<%=product._id%>" class="btn btn-success pull-right"><%= response.__("shoppingCart.add-to-cart")%></a>
         </div>
       </div>
       
     <% }) %>
   </div>
       
-  <%- include('./partials/footer.ejs') %>
-    
-
 </div>
+
+<%- include('./partials/footer.ejs') %>
 </div>
 
  </html>

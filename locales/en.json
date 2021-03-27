@@ -19,7 +19,8 @@
 		"reportProblem": "Report Problems",
 		"copyRight": {
 			"message": "CopyRight © 2020 Intellectual property of Mr. Robot"
-		}
+		},
+        "chatrooms": "Chatrooms"
 	},
 	"about": {
 		"title": "Express",
@@ -114,6 +115,12 @@
 		"title": "All Products"
 	},
 	"shoppingCart": {
-		"title": "Shopping Cart"
-	}
+		"title": "Shopping Cart",
+        "add-to-cart": "Add to cart",
+        "total": "total"
+	},
+    "chatrooms": {
+        "createNew": "New Room",
+        "join": "Join"
+    }
 }

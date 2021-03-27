@@ -15,7 +15,7 @@ passport.serializeUser((user, done) => {
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: process.env.HOST + "/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'email', 'name']
   },
   function(accessToken, refreshToken, profile, done) {

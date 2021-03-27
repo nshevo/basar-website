@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="<%=response.getLocale()%>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Roomselection</title>
+  <script defer src="<%= host %>/socket.io/socket.io.js"></script>
+  <script defer src="/javascripts/chatscript.js"></script>
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<%- include('./partials/header.ejs') %>
+<body>
+  <div id="room-container">
+    <% Object.keys(rooms).forEach(room => { %>
+      <div><%= room %></div>
+      <a href="/chatrooms/<%= room %>"><%= response.__("chatrooms.join")%></a>
+      <!-- <a href="#" onclick="joinRoom('room')">Join</a> -->
+    <% }) %>
+  </div>
+  <form action="/chatrooms/room" method="POST">
+    <input name="room" type="text" required>
+    <button type="submit"><%= response.__("chatrooms.createNew")%></button>
+  </form>
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>
