@@ -14,6 +14,7 @@ function darkMode(){
     $("div[id='cards']").addClass("text-white bg-dark");
     $("div[id='body']").addClass("bg-dark");
     $("body").addClass("bg-dark");
+    $("[class$='btn-outline-dark']").toggleClass('btn-outline-dark btn-outline-light');
     $("h1, h2, h3, h4, h5, h6").addClass("text-white");
     $("[id='categories_titel']").addClass("text-white");
     $("a[class^='navbar-text']").each((i, ele) => {
@@ -30,6 +31,7 @@ function darkMode(){
     $("div[id='body']").removeClass("bg-dark");
     $("[id='categories_titel']").removeClass("text-white");
     $("h1, h2, h3, h4, h5, h6").removeClass("text-white");
+    $("[class$='btn-outline-light']").toggleClass('btn-outline-light btn-outline-dark');
     $("body").removeClass("bg-dark");
     $("a[class^='navbar-text']").each((i, ele) => {
         console.log(ele);
