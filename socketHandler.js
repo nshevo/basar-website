@@ -3,7 +3,7 @@ module.exports = (io, rooms)=> {
         socket.on('new-user', (room, name) => {
         console.log('user connected')
         socket.username = name;
-        socket.room =room
+        socket.room = room
         socket.join(room)
         rooms[room].users[socket.id] = name
         socket.broadcast.to(room).emit('user-connected', name)

@@ -10,7 +10,7 @@ var index = (req, res, next) => {
     var cart = new Cart(req.session.cart);
     console.log("trying to render the cart now");
     console.log(cart.generateArray()); 
-    res.render('shoppingCart', {title:res.__("shoppingCart.title"), response: res, products: cart.generateArray(), totalPrice:cart.totalPrice});
+    res.render('shoppingCart', {title:res.__("shoppingCart.title"), response: res, products: cart.generateArray(), totalPrice: cart.totalPrice});
 }
 
 module.exports = {

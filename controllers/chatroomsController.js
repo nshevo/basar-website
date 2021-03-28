@@ -1,7 +1,7 @@
 var index = (req, res, next) => {
     const rooms = req.app.get('rooms');
     console.log("chatrooms loading...")
-    res.render('roomSelection', {rooms: rooms,response: res, host: process.env.HOST});
+    res.render('roomSelection', {rooms: rooms, response: res, host: process.env.HOST});
 }
 
 var create = (req, res) => {
