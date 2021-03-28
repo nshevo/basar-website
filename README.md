@@ -35,9 +35,10 @@ Documentations regarding every feature are in the "doc" Folder.
 #### Medium
 
 1. Search - Andriy
-2. Registration and Login with DB - Nikita
-3. Shopping Cart - Kurt
-4. Filter - 
+2. Registration with DB - Nikita
+3. Login with DB - Nikita
+4. Shopping Cart - Kurt
+5. Filter
 
 #### Hard
 
