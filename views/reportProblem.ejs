@@ -14,21 +14,25 @@
                                 <%- title %>
                             </h3>
 
-                            <ul>
+                            <div class="col-5">
+
                                 <% if(messages.success.length > 0) { %>
-                                    <li>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
                                         <%= messages.success %>
                                     </li>
-                                    <% } %>
-                            </ul>
+                                </ul>
+                                <% } %>
 
-                            <ul>
                                 <% if(messages.error.length > 0){ %>
-                                    <li>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
                                         <%= messages.error %>
                                     </li>
-                                    <% } %>
-                            </ul>
+                                </ul>
+                                <% } %>
+                                
+                            </div>
 
                             <% if(typeof userEmail==='undefined' ) { %>
                                 <% userEmail="" ; %>

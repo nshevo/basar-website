@@ -29,7 +29,7 @@ const transporter = nodeMailer.createTransport({
 });
 
 function reportError(req, res) {
-    req.flash("error", "Something went wrong. Please try again later");
+    req.flash("error", res.__("reportProblem.reportError"));
     res.status(500).render('reportProblem', {
         title: res.__("reportProblem.title"),response:res, messages: {
             error: req.flash('error'),
@@ -44,7 +44,7 @@ exports.reportProblem = (req, res) => {
     let isAnyFieldEmpty = !email || !subject || !description;
 
     if (isAnyFieldEmpty) {
-        req.flash("error", "Please enter all fields");
+        req.flash("error", res.__("reportProblem.pleaseEnterAllFields"));
         return res.status(422).render('reportProblem', {
             title: res.__("reportProblem.title"),response:res, messages: {
                 error: req.flash('error'),
@@ -54,7 +54,7 @@ exports.reportProblem = (req, res) => {
     }
 
     if (subject.length < 6 || description.length < 6) {
-        req.flash("error", "Please describe more the subject or description");
+        req.flash("error", res.__("reportProblem.describeMoreSubjectOrDescription"));
         return res.status(422).render('reportProblem', {
             title: res.__("reportProblem.title"),response:res, messages: {
                 error: req.flash('error'),
@@ -80,7 +80,7 @@ exports.reportProblem = (req, res) => {
         if (err) {
             reportError(req, res);
         } else {
-            req.flash("success", "Thank you for reporting a problem");
+            req.flash("success", res.__("reportProblem.thankYouForReporting"));
             return res.status(200).render('reportProblem', {
                 title: res.__("reportProblem.title"),response:res, messages: {
                     error: req.flash('error'),

@@ -46,13 +46,25 @@
 		"button": {
 			"text": "Register"
 		},
-		"alreadyRegister": "Already Registred"
+		"alreadyRegister": "Already Registred",
+		"pleaseEnterAllFields": "Please enter all fields",
+		"passwordAtLeastSixLength": "Password too short, use at least 6 characters",
+		"passwordsDontMatch": "Passwords don't match",
+		"firstOrLastNameInvalid": "First name or last name are invalid",
+		"adressInvalid": "Incorrect address",
+		"emailUsed": "E-Mail is already beeing used",
+		"registredPleaseLogIn": "Successfully registred! Please log in",
+		"errorOnRegistration": "Fatal Error please report this Problem"
 	},
 	"reportProblem": {
 		"title": "Report Problem",
 		"subject": "Subject",
 		"description": "Description",
-		"reportBtn": "Report"
+		"reportBtn": "Report",
+		"reportError": "Something went wrong, please try again later or report the problem",
+		"pleaseEnterAllFields": "Please enter all fields",
+		"describeMoreSubjectOrDescription": "Please go in detail with the reporting subject",
+		"thankYouForReporting": "Many Thanks for your report!"
 	},
 	"search": {
 		"title": "Search",
@@ -106,7 +118,12 @@
 		},
 		"title": "Login",
 		"login": "Login",
-		"register": "Create account"
+		"register": "Create an account",
+		"passwordIncorrect": "Incorrect Password",
+		"emailIncorrect": "Incorrect E-Mail"
+	},
+	"logout": {
+		"loggedOut": "You have logged out"
 	},
 	"error": {
 		"title": "Server error",

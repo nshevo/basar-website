@@ -44,15 +44,27 @@
 			"confirmPassword": "Kennwort bestätigen"
 		},
 		"button": {
-			"text": "Registrieren"
+			"text": "Anmelden"
 		},
-		"alreadyRegister": "Bereits registriert"
+		"alreadyRegister": "Bereits registriert",
+		"pleaseEnterAllFields": "Bitte füllen Sie alle Felder aus",
+		"passwordAtLeastSixLength": "Passwort zu kurz, mindestens 6 Zeichen erlaubt",
+		"passwordsDontMatch": "Passwörter sind nicht identisch",
+		"firstOrLastNameInvalid": "Vor- oder Nachname beinhaltet ungültige Zeichen",
+		"adressInvalid": "Adresse ist ungültig",
+		"emailUsed": "E-Mail-Adresse wird bereits verwendet",
+		"registredPleaseLogIn": "Anmeldung abgeschlossen! Bitte loggen Sie sich ein",
+		"errorOnRegistration": "Fatales Fehler während der Anmeldung, bitte melden Sie das Problem"
 	},
 	"reportProblem": {
 		"title": "Problem melden",
 		"subject": "Thema",
 		"description": "Beschreibung",
-		"reportBtn": "Melden"
+		"reportBtn": "Melden",
+		"reportError": "Irgendwas ist schief gelaufen. Bitte versuchen Sie es später erneut",
+		"pleaseEnterAllFields": "Bitte füllen Sie alle Felder aus",
+		"describeMoreSubjectOrDescription": "Bitte beschreiben Sie das Thema genauer",
+		"thankYouForReporting": "Vielen Dank für Ihre Meldung!"
 	},
 	"search": {
 		"title": "Suche",
@@ -100,7 +112,12 @@
 		},
 		"title": "Einloggen",
 		"login": "Einloggen",
-		"register": "Konto erstellen"
+		"register": "Konto erstellen",
+		"passwordIncorrect": "Ungültiges Passwort",
+		"emailIncorrect": "Ungültige E-Mail-Adresse"
+	},
+	"logout": {
+		"loggedOut": "Sie haben sich abgemeldet"
 	},
 	"shoppingCart": {
 		"title": "Einkaufswagen",

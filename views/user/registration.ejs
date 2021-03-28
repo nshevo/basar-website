@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('../partials/head.ejs') %>
 
@@ -14,16 +14,18 @@
                                 <%- title %>
                             </h3>
 
-                            <ul>
+                            <div class="col-5">
                                 <% if(typeof errors !='undefined' ){ %>
+                                <ul class="list-group list-group-flush">
                                     <% errors.forEach(error=>{%>
-                                        <li>
+                                        <li class="list-group-item">
                                             <%= error.message %>
                                         </li>
-                                        <% }) %>
-                                            <% } %>
-                            </ul>
-
+                                    <% }) %>
+                                </ul>
+                                <% } %>
+                            </div>
+                            
                             <form action="/user/registration" method="POST">
                                 <div>
                                     <input type="text" id="firstName" name="firstName" placeholder="<%= response.__("registration.placeHolders.firstName") %>"

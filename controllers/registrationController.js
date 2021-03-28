@@ -15,16 +15,8 @@ exports.signUp = async (req, res) => {
     let isAnyFieldEmpty = !email || !password || !password2 || !firstName || !lastName || !country || !city || !streetHouseNumber;
 
     if (isAnyFieldEmpty) {
-        errors.push({ message: "Please enter all fields" });
-        return res.status(422).render('user/registration', { title: "Registration", response: res, errors });
-    }
-
-    if (password.length < 6) {
-        errors.push({ message: "Password should be at least 6 characters" });
-    }
-
-    if (password != password2) {
-        errors.push({ message: "Password don't match" });
+        errors.push({ message: res.__("registration.pleaseEnterAllFields") });
+        return res.status(422).render('user/registration', { title: res.__("registration.title"), response: res, errors });
     }
 
     //Validate user input: firstName, lastName, country, city with validation pattern
@@ -32,12 +24,12 @@ exports.signUp = async (req, res) => {
 
     let validateNameInput = !validationPattern.test(firstName) || !validationPattern.test(lastName)
     if (validateNameInput) {
-        errors.push({ message: "First or last name are invalid" });
+        errors.push({ message: res.__("registration.firstOrLastNameInvalid")});
     }
 
     let validateAdressInput = !validationPattern.test(country) || !validationPattern.test(city);
     if (validateAdressInput) {
-        errors.push({ message: "Adress is invalid" });
+        errors.push({ message: res.__("registration.adressInvalid") });
     }
 
     try {
@@ -46,11 +38,19 @@ exports.signUp = async (req, res) => {
         });
 
         if (user) {
-            errors.push({ message: "Email already used" });
+            errors.push({ message: res.__("registration.emailUsed")});
+        }
+
+        if (password.length < 6) {
+            errors.push({ message: res.__("registration.passwordAtLeastSixLength") });
+        }
+    
+        if (password != password2) {
+            errors.push({ message: res.__("registration.passwordsDontMatch") });
         }
 
         if (errors.length > 0) {
-            return res.status(422).render('user/registration', { title: "Registration",response: res, errors });
+            return res.status(422).render('user/registration', { title: res.__("registration.title"), response: res, errors });
         }
 
         //Create new User with all the input information
@@ -71,11 +71,10 @@ exports.signUp = async (req, res) => {
 
         await user.save();
 
-        req.flash('success', "You're now registred. Please log in.");
+        req.flash('success', res.__("registration.registredPleaseLogIn"));
         res.redirect("/user/login");
     } catch (err) {
-        console.log(err.message);
-        res.status(500).send("Error in Saving");
+        res.status(500).send(res.__("registration.errorOnRegistration"));
     }
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%=response.getLocale()%>">
 
 <%- include('../partials/head.ejs') %>
 
@@ -13,30 +13,33 @@
                             <h3 class="title">
                                 <%- title %>
                             </h3>
-
-                            <ul>
+                            
+                            <div class="col-5">
                                 <% if(typeof message !='undefined' ) { %>
-                                    <li>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
                                         <%= message %>
                                     </li>
-                                    <% } %>
-                            </ul>
+                                </ul>
+                                <% } %>
+                            
 
-                            <ul>
                                 <% if(messages.success.length > 0) { %>
-                                    <li>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
                                         <%= messages.success %>
                                     </li>
-                                    <% } %>
-                            </ul>
+                                </ul>
+                                <% } %>
 
-                            <ul>
                                 <% if(messages.error.length > 0){ %>
-                                    <li>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> 
                                         <%= messages.error %>
                                     </li>
-                                    <% } %>
-                            </ul>
+                                </ul>
+                                <% } %>
+                            </div>
 
                             <form action="/user/login" method="POST">
                                 <div>

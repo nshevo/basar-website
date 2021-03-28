@@ -59,6 +59,10 @@ body > .container {
     top: 30px;
     left: 330px;
   }
+
+  .list-group {
+    margin-bottom: 2.5%;
+  }
   
   /** Source: https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css **/
   /** some minor adjustments where applied to the some scripts from above        **/

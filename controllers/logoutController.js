@@ -20,7 +20,7 @@ exports.logOut = (req, res) => {
           res.cookie('jwt', token, { httpOnly: true, maxAge: '0' }); // secure: true deleted
           //req.session = null;
           req.logout();
-          req.flash('success', "You have logged out");
+          req.flash('success', res.__("logout.loggedOut"));
           res.redirect('/user/login');
         }
       }
@@ -30,7 +30,7 @@ exports.logOut = (req, res) => {
     // cookies.set('connect.sid', {maxAge: 0});
     // req.session = null;
     req.logout();
-    req.flash('success', "You have logged out");
+    req.flash('success', res.__("logout.loggedOut"));
     res.redirect('/user/login');
   }
 }

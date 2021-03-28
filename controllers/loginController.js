@@ -21,9 +21,9 @@ exports.signIn = async (req, res) => {
     })
         .then(async user => {
             if (!user) {
-                req.flash("error", "Email is incorrect");
+                req.flash("error", res.__("login.emailIncorrect"));
                 return res.status(422).render('user/login', {
-                    title: "Login", response: res, messages: {
+                    title: res.__("login.title"), response: res, messages: {
                         error: req.flash('error'),
                         success: req.flash('success')
                     }
@@ -33,9 +33,9 @@ exports.signIn = async (req, res) => {
             var passwordIsValid = await argon2.verify(user.password, password);
 
             if (!passwordIsValid) {
-                req.flash("error", "Password is incorrect");
+                req.flash("error", res.__("login.passwordIncorrect"));
                 return res.status(422).render('user/login', {
-                    title: "Login", response: res, messages: {
+                    title: res.__("login.title"), response: res, messages: {
                         error: req.flash('error'),
                         success: req.flash('success')
                     }
