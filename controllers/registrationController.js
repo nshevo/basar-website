@@ -20,7 +20,7 @@ exports.signUp = async (req, res) => {
     }
 
     //Validate user input: firstName, lastName, country, city with validation pattern
-    var validationPattern = /^[A-Za-z]+$/;
+    var validationPattern = /^[A-Za-z\s]+$/;
 
     let validateNameInput = !validationPattern.test(firstName) || !validationPattern.test(lastName)
     if (validateNameInput) {
