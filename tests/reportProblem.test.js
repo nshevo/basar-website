@@ -63,7 +63,7 @@ describe("POST reportProblem", function (done) {
             .post("/reportProblem")
             .send(filledInputFields)
             .expect(200)
-            .expect(/Thank you for reporting a problem/, done);
+            .expect(/Many Thanks for your report!/, done);
     });
 
     it("should return 422 error by reporting with invalid inputs", function (done) {
@@ -71,6 +71,6 @@ describe("POST reportProblem", function (done) {
             .post("/reportProblem")
             .send(invalidInputFields)
             .expect(422)
-            .expect(/Please describe more the subject or description/, done);
+            .expect(/Please go in detail with the reporting subject/, done);
     });
 });
