@@ -3,8 +3,8 @@ var Schema = mongoose.Schema;
 
 const productSchema = new Schema({
     title: {
-       type: String,
-       required: true
+        type: String,
+        required: true
     },
     price: {
         type: Number,

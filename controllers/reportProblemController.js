@@ -11,10 +11,10 @@ exports.isUserLoggedIn = (req, res) => {
     passport.authenticate('jwt', { session: false, failureFlash: false },
         (err, user) => {
             if (!user) {
-                res.render("reportProblem", { title: res.__("reportProblem.title"),response:res, messages: { error: req.flash('error'), success: req.flash('success') } });
+                res.render("reportProblem", { title: res.__("reportProblem.title"), response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
             }
             if (user) {
-                res.render("reportProblem", { title: res.__("reportProblem.title"),response:res, userEmail: user.email, messages: { error: req.flash('error'), success: req.flash('success') } });
+                res.render("reportProblem", { title: res.__("reportProblem.title"), response: res, userEmail: user.email, messages: { error: req.flash('error'), success: req.flash('success') } });
             }
         })(req, res)
 }
@@ -31,7 +31,7 @@ const transporter = nodeMailer.createTransport({
 function reportError(req, res) {
     req.flash("error", res.__("reportProblem.reportError"));
     res.status(500).render('reportProblem', {
-        title: res.__("reportProblem.title"),response:res, messages: {
+        title: res.__("reportProblem.title"), response: res, messages: {
             error: req.flash('error'),
             success: req.flash('success')
         }
@@ -46,7 +46,7 @@ exports.reportProblem = (req, res) => {
     if (isAnyFieldEmpty) {
         req.flash("error", res.__("reportProblem.pleaseEnterAllFields"));
         return res.status(422).render('reportProblem', {
-            title: res.__("reportProblem.title"),response:res, messages: {
+            title: res.__("reportProblem.title"), response: res, messages: {
                 error: req.flash('error'),
                 success: req.flash('success')
             }
@@ -56,7 +56,7 @@ exports.reportProblem = (req, res) => {
     if (subject.length < 6 || description.length < 6) {
         req.flash("error", res.__("reportProblem.describeMoreSubjectOrDescription"));
         return res.status(422).render('reportProblem', {
-            title: res.__("reportProblem.title"),response:res, messages: {
+            title: res.__("reportProblem.title"), response: res, messages: {
                 error: req.flash('error'),
                 success: req.flash('success')
             }
@@ -82,7 +82,7 @@ exports.reportProblem = (req, res) => {
         } else {
             req.flash("success", res.__("reportProblem.thankYouForReporting"));
             return res.status(200).render('reportProblem', {
-                title: res.__("reportProblem.title"),response:res, messages: {
+                title: res.__("reportProblem.title"), response: res, messages: {
                     error: req.flash('error'),
                     success: req.flash('success')
                 }

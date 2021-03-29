@@ -24,7 +24,7 @@ exports.signUp = async (req, res) => {
 
     let validateNameInput = !validationPattern.test(firstName) || !validationPattern.test(lastName)
     if (validateNameInput) {
-        errors.push({ message: res.__("registration.firstOrLastNameInvalid")});
+        errors.push({ message: res.__("registration.firstOrLastNameInvalid") });
     }
 
     let validateAdressInput = !validationPattern.test(country) || !validationPattern.test(city);
@@ -38,13 +38,13 @@ exports.signUp = async (req, res) => {
         });
 
         if (user) {
-            errors.push({ message: res.__("registration.emailUsed")});
+            errors.push({ message: res.__("registration.emailUsed") });
         }
 
         if (password.length < 6) {
             errors.push({ message: res.__("registration.passwordAtLeastSixLength") });
         }
-    
+
         if (password != password2) {
             errors.push({ message: res.__("registration.passwordsDontMatch") });
         }
@@ -83,7 +83,7 @@ exports.isRegistred = (req, res) => {
     passport.authenticate('jwt', { session: false },
         function (err, user, info) {
             if (!user) {
-                res.render('user/registration', { title: res.__("registration.title"),response: res });
+                res.render('user/registration', { title: res.__("registration.title"), response: res });
             }
             if (user) {
                 res.redirect('/user/dashboard');

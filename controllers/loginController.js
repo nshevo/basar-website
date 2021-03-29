@@ -14,7 +14,7 @@ exports.signIn = async (req, res) => {
 
     await User.findOne({
         email: email,
-        googleID: {$exists: false}
+        googleID: { $exists: false }
     }, (err, user) => {
         //debug section
         //console.log(err);console.log('Found user: '+user);
@@ -72,26 +72,26 @@ exports.signIn = async (req, res) => {
 
 //Login Page - verify login
 exports.isLoggedIn = (req, res) => {
-    if(!req.user){
+    if (!req.user) {
         //user not logged in
         passport.authenticate('jwt', { session: false, failureFlash: false },
-                (err, user) => {
-                    if (!user) {
-                        res.render('user/login', { title: res.__("login.title"), response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
-                    }
-                    if (user) {
-                        res.redirect('/user/dashboard');
-                        this.loggedIn = true;
-                    }
-                })(req, res)
-    }else{
+            (err, user) => {
+                if (!user) {
+                    res.render('user/login', { title: res.__("login.title"), response: res, messages: { error: req.flash('error'), success: req.flash('success') } });
+                }
+                if (user) {
+                    res.redirect('/user/dashboard');
+                    this.loggedIn = true;
+                }
+            })(req, res)
+    } else {
         //user is logged in
         this.loggedIn = true;
         let user = req.user;
-        if('googleID' in user){
+        if ('googleID' in user) {
             res.redirect('/user/dashboard');
-        }else if('facebookID' in user){
-            
+        } else if ('facebookID' in user) {
+
         }
     }
 

@@ -12,6 +12,7 @@
 /storage/*
 /node_modules
 /yarn-error.log
+/.vscode
 
 /public/assets
 .byebug_history
