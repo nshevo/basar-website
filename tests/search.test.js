@@ -41,7 +41,7 @@ describe("search sidebar menu", function () {
     it("tests the existense of sidebar menu", function (done) {
         request(app).get("/search?item='samsung'")
             .expect(200)
-            .expect(/<div class="col-3 col-md-2 w-100 px-0 bg-light position-sticky max-vh-100 basar-categories" id="sticky-sidebar">/, done);
+            .expect(/<div class="col-3 col-md-2 w-100 px-0 bg-light position-sticky max-vh-100 basar-categories text-dark" id="sticky-sidebar">/, done);
     });
 });
 

@@ -7,6 +7,7 @@ var jwt = require("jsonwebtoken");
 var argon2 = require("argon2");
 const passport = require("passport");
 const User = require("../models/LoginModel");
+const { NotExtended } = require("http-errors");
 exports.loggedIn = false;
 
 exports.signIn = async (req, res) => {
@@ -70,8 +71,8 @@ exports.signIn = async (req, res) => {
 }
 
 //Login Page - verify login
-exports.isLoggedIn = (req, res) => {
-    if (!req.user) {
+exports.isLoggedIn = (req, res, next) => {
+    if(!req.user){
         //user not logged in
         passport.authenticate('jwt', { session: false, failureFlash: false },
             (err, user) => {
@@ -89,9 +90,10 @@ exports.isLoggedIn = (req, res) => {
         let user = req.user;
         if ('googleID' in user) {
             res.redirect('/user/dashboard');
-        } else if ('facebookID' in user) {
-
+        }else if('facebookID' in user){
+            res.redirect('/user/dashboard');
         }
     }
 
 }
+

@@ -10,6 +10,9 @@
     "argon2": "^0.27.1",
     "bootstrap": "^4.4.1",
     "bootstrap4-toggle": "^3.6.1",
+    "chai": "^4.3.4",
+    "chai-dom": "^1.9.0",
+    "chai-webdriver": "^1.2.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "~1.4.4",
@@ -31,10 +34,10 @@
     "passport-google-oauth": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "popper.js": "^1.16.1",
+    "selenium-webdriver": "^2.42.0",
     "socket.io": "^4.0.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.7",
     "supertest": "^6.0.1"
