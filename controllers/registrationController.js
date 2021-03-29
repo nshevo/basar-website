@@ -80,7 +80,9 @@ exports.signUp = async (req, res) => {
 
 //Registration page - verify login
 exports.isRegistred = (req, res) => {
-    passport.authenticate('jwt', { session: false },
+    
+    if(!req.user){
+        passport.authenticate('jwt', { session: false },
         function (err, user, info) {
             if (!user) {
                 res.render('user/registration', { title: res.__("registration.title"), response: res });
@@ -89,4 +91,13 @@ exports.isRegistred = (req, res) => {
                 res.redirect('/user/dashboard');
             }
         })(req, res)
+    }else{
+        if(req.isAuthenticated()){
+            //req.isAuthenticated() will return true if user is logged in
+            res.redirect('/user/dashboard');
+        } else{
+            res.render('user/registration', { title: res.__("registration.title"),response: res });
+        }
+    }
+    
 }
