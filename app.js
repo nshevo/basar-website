@@ -51,6 +51,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 //app.use(expressLayouts);
 
+// make sure we are in production mode for ssl
+process.env.NODE_ENV = 'production';
+//process.env.NODE_ENV = 'development';
+
+console.log(process.env.NODE_ENV);
+
+//enable ssl when in production mode
+
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+      next()
+  })
+}
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
