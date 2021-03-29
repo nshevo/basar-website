@@ -122,7 +122,8 @@
 	"shoppingCart": {
 		"title": "Einkaufswagen",
 		"add-to-cart": "In den Einkaufswagen",
-		"total": "Gesamtpreis"
+		"total": "Gesamtpreis",
+		"noItems": "Keine Produkte in deinem Shopping Cart!"
 	},
 	"allProducts": {
 		"title": "Alle Produkte"

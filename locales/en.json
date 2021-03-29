@@ -136,7 +136,8 @@
 	"shoppingCart": {
 		"title": "Shopping Cart",
 		"add-to-cart": "Add to cart",
-		"total": "total"
+		"total": "total",
+		"noItems": "There are no items in your shopping cart!"
 	},
 	"chatrooms": {
 		"createNew": "New Room",
