@@ -1,4 +1,3 @@
-
 var Product = require('../models/product');
 var Cart = require('../models/cart');
 
@@ -16,10 +15,6 @@ const show = (req, res, next) => {
     });
 }
 
-
 module.exports = {
     show
 }
-
-
-
