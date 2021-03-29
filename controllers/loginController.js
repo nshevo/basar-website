@@ -72,7 +72,7 @@ exports.signIn = async (req, res) => {
 
 //Login Page - verify login
 exports.isLoggedIn = (req, res, next) => {
-    if(!req.user){
+    if (!req.user) {
         //user not logged in
         passport.authenticate('jwt', { session: false, failureFlash: false },
             (err, user) => {
@@ -90,7 +90,7 @@ exports.isLoggedIn = (req, res, next) => {
         let user = req.user;
         if ('googleID' in user) {
             res.redirect('/user/dashboard');
-        }else if('facebookID' in user){
+        } else if ('facebookID' in user) {
             res.redirect('/user/dashboard');
         }
     }

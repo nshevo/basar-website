@@ -80,24 +80,24 @@ exports.signUp = async (req, res) => {
 
 //Registration page - verify login
 exports.isRegistred = (req, res) => {
-    
-    if(!req.user){
+
+    if (!req.user) {
         passport.authenticate('jwt', { session: false },
-        function (err, user, info) {
-            if (!user) {
-                res.render('user/registration', { title: res.__("registration.title"), response: res });
-            }
-            if (user) {
-                res.redirect('/user/dashboard');
-            }
-        })(req, res)
-    }else{
-        if(req.isAuthenticated()){
+            function (err, user, info) {
+                if (!user) {
+                    res.render('user/registration', { title: res.__("registration.title"), response: res });
+                }
+                if (user) {
+                    res.redirect('/user/dashboard');
+                }
+            })(req, res)
+    } else {
+        if (req.isAuthenticated()) {
             //req.isAuthenticated() will return true if user is logged in
             res.redirect('/user/dashboard');
-        } else{
-            res.render('user/registration', { title: res.__("registration.title"),response: res });
+        } else {
+            res.render('user/registration', { title: res.__("registration.title"), response: res });
         }
     }
-    
+
 }
