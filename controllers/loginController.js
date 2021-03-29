@@ -61,8 +61,7 @@ exports.signIn = async (req, res) => {
                 const token = jwt.sign(JSON.stringify(payload), process.env.JWT_SECRET_STRING);
 
                 // save jwt token in the cookie
-                // add: secure: true when deploying
-                res.cookie('jwt', token, { httpOnly: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
+                res.cookie('jwt', token, { httpOnly: true, secure: true, maxAge: process.env.JWT_TOKEN_EXPIRATION_MS });
                 this.loggedIn = true;
                 //console.log(this.loggedIn);
                 res.status(200).redirect("/user/dashboard");
