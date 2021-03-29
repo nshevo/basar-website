@@ -32,19 +32,4 @@ router.get('/facebook', authentificationController.facebookAuth);
 // authentication has failed.
 router.get('/facebook/callback', authentificationController.facebookCallback);
 
-
-// Cached Code
-
-// router.get('/google/callback', 
-//   passport.authenticate('google'),
-//   (req, res, next) => {
-//     res.redirect('/user/login');
-// });
-//router.get('/facebook', passport.authenticate('facebook'));
-// router.get('/facebook/callback', 
-// passport.authenticate('facebook'),
-//   (req, res, next) => {
-//     res.redirect('/user/login');
-// });
-
 module.exports = router;

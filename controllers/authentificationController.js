@@ -10,9 +10,6 @@ const googleCallback = (req, res, next) => {
     passport.authenticate('google', { successRedirect: '/user/dashboard',
     failureRedirect: '/login',
     failureFlash: true }) (req, res, next);
-    // (req, res, next) => {
-    //     res.redirect('/user/login');
-    // }
 }
 
 const facebookAuth = (req, res, next) => {
@@ -24,12 +21,6 @@ const facebookCallback = (req, res, next) => {
     failureRedirect: '/login',
     failureFlash: true }) (req, res, next);
 }
-
-// app.get('/user/dashboard', 
-//   passport.authenticate('google', { failureRedirect: '/user/login' }),
-//   function(req, res) {
-//     res.redirect('/good');
-//   });
 
   module.exports = {
     googleAuth,

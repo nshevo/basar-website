@@ -16,7 +16,6 @@
     <% Object.keys(rooms).forEach(room => { %>
       <div><%= room %></div>
       <a href="/chatrooms/<%= room %>"><%= response.__("chatrooms.join")%></a>
-      <!-- <a href="#" onclick="joinRoom('room')">Join</a> -->
     <% }) %>
   </div>
   <form action="/chatrooms/room" method="POST">
